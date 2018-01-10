@@ -23,7 +23,6 @@ function fizzBuzz(num) {
         array.push(count);
         count++;
     }
-    console.log(array);
     return array.map(function (el) {
         if(el % 3 === 0 && el % 5 === 0) {
             return "fizzbuzz";
