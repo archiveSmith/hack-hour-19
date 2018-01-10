@@ -16,6 +16,7 @@
 //                     'fizzbuzz',
 //                     16 ]
 
+
 function fizzbuzz(num) {
   let result=[];
   for (let i=1; i<=num; i++){
