@@ -17,7 +17,13 @@
 //                     16 ]
 
 function fizzbuzz(num) {  
-
+    let holder = [];
+    for (let i=1; i<=num; i++) {
+        holder.push(i);
+    }
+   return holder.map(function(el){
+       return el%5 === 0 & el%3 ===0 ? 'fizzbuzz' : el%5 === 0 ? 'buzz' : el%3 === 0 ? 'fizz' : el;
+   })
 }
 
 module.exports = fizzbuzz;
