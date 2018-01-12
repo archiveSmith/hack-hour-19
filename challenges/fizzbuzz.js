@@ -16,8 +16,18 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
+function fizzbuzz(num) {   
+ var count = 0;
+ var array = [];
+ for (var i = 1; i <= num; i++) {
+   array.push(i);   
+ }
+  return array.map(ele => filterAndChange(ele));
+}
 
+function filterAndChange (num) {
+  return num % 3 === 0 && num % 5 === 0 ? 'fizzbuzz':num % 3 === 0 ? 'fizz': num % 5 === 0 ? 'buzz':num;
+}
 }
 
 module.exports = fizzbuzz;
