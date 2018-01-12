@@ -14,13 +14,11 @@
 */
 
 function drawStairs(n) {
-  const stairs = '';
-  const space = ' ';
-  const hash = '*';
-  const array = [];
-  for (let i = 1; i <= n; i++) {
-    console.log(space.repeat(n - i).concat(hash.repeat(i)));
-  }
+    const space = ' ';
+    const hash = '*';
+    for (let i = 1; i <= n; i++) {
+        console.log(space.repeat(n - i).concat(hash.repeat(i)));
+    }
 }
 
 
