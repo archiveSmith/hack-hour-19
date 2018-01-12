@@ -26,14 +26,12 @@ function drawStairs(n) {
     for (let k = 0; k < i; k++) {
       stairs += '*';
     }
-    // if (i < n) {
+    if (i < n) {
       stairs += '\n';
-    // }
+    }
   }
   console.log(stairs);
   return stairs;
 }
-
-drawStairs(8);
 
 module.exports = drawStairs;
