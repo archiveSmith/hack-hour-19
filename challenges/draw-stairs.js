@@ -14,8 +14,32 @@
 */
 
 function drawStairs(n) {
+  const symbol = '*';
+  const fill = ' ';
+
+  for (let i = 1; i <= n; i += 1) {
+    let display = '';
+
+    // build stairs
+    for (let j = 1; j <= i; j += 1) {
+      display += symbol;
+    }
+
+    // add spaces to front
+    const { length } = display;
+    const numSpaces = n - length;
+    let front = '';
+
+    for (let k = 0; k < numSpaces; k += 1) {
+      front += fill;
+    }
+
+    // combine space and symbol
+    console.log(front + display);
+    display = '';
+  }
 
 }
 
-
+drawStairs(6);
 module.exports = drawStairs;
