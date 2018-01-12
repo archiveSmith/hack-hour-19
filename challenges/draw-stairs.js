@@ -16,10 +16,10 @@
 function drawStairs(n) {
   const stairs = '';
   const space = ' ';
-  const hash = '#';
+  const hash = '*';
   const array = [];
   for (let i = 1; i <= n; i++) {
-    console.log(space.repeat(n - i).concat(hash.repeat(i)).slice());
+    console.log(space.repeat(n - i).concat(hash.repeat(i)));
   }
 }
 
