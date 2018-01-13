@@ -11,12 +11,10 @@
 
 
 function modemean(array) {
-    let len = array.length;
 
     function mean(array){//the average number
-        let count = 0;
-        for (let i = 0; i < len; i++) count += array[i];
-        return count / len;
+        let count = array.reduce((acc, cur) => acc += cur, 0)
+        return Math.floor(count/array.length);
     }
 
     function mode(array){//how many
@@ -36,4 +34,5 @@ function modemean(array) {
     }
     return mode(array) == mean(array) ? true : false;
 }
+// console.log(modemean([4,4,4,6,2]))
 module.exports = modemean;
