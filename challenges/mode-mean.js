@@ -14,7 +14,16 @@ function modemean(array) {
 	if(array.length===1){
 		return true;
 	}
-
+	let allSame = true;
+	for(let i=1; i<array.length){
+		let firstNum = array[0]; 
+		if(firstNum!==array[i]){
+			allSame = false; 
+		}
+	}
+	if(allSame === true){
+		return true; 
+	}
 	function mode(array){
 		let mode = 0;
 		let modeCount = 0; 
