@@ -11,7 +11,17 @@
 
 
 function modemean(array) {
+  const sum = array.reduce((acc, v) => {
+    acc += v;
+    return acc;
+  }, 0);
+  const mean = Math.floor(sum/(array.length));
 
+  const sorted = array.sort((a, b) => a - b);
+  const middle = Math.ceil(array.length/2);
+  const mode = array[middle];
+
+  return sorted === mode;
 }
 
 module.exports = modemean;
