@@ -28,10 +28,12 @@ function astString(num, total) {
 
 function drawStairs(n) {
     var count = 1;
+    var str = "";
     while (count <= n) {
-        console.log(astString(count, n));
+        str += astString(count, n) + '\n';
         count += 1;
     }
+    console.log(str);
 }
 
 
