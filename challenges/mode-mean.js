@@ -15,7 +15,7 @@ function modemean(array) {
 		return true;
 	}
 	let allSame = true;
-	for(let i=1; i<array.length){
+	for(let i=1; i<array.length; i++){
 		let firstNum = array[0]; 
 		if(firstNum!==array[i]){
 			allSame = false; 
