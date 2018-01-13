@@ -14,6 +14,7 @@ function modemean(array) {
 	if(array.length===1){
 		return true;
 	}
+
 	function mode(array){
 		let mode = 0;
 		let modeCount = 0; 
@@ -49,7 +50,7 @@ function modemean(array) {
 	let Mode = mode(array);
 	let Mean = mean(array);
 	
-	if(mean === mode){
+	if(Mean === Mode){
 		return true;
 	}
 	return false;
