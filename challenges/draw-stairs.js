@@ -14,7 +14,23 @@
 */
 
 function drawStairs(n) {
-
+let spaces = "";
+let ast = "";
+let constantN = n;
+	// console log each stair case
+	for(let i=1; i<=n; i++){
+		// for adding spaces
+		for(let j=0; j<(constantN-i); j++){
+			spaces+="-"; 
+		}
+		// for adding ast
+		for(let k=0; k<i; k++){
+			ast+="*";
+		}
+		console.log(spaces+ast); 
+		spaces="";
+		ast="";
+	}
 }
 
 
