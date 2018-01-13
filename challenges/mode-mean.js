@@ -44,6 +44,6 @@ function count(array, el){
     return [count, el];
 }
 
-console.log(modemean([10, 5, 5, 5, 5, 5, 5]));
+//console.log(modemean([10, 5, 5, 5, 5, 5, 5]));
 
-//module.exports = modemean;
+module.exports = modemean;
