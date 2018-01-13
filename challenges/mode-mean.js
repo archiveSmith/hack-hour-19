@@ -10,11 +10,11 @@
  */
 
 function modemean(array) {
+  if (array.length === 1) return true;
   return findMean(array) === findMode(array);
 }
 
 function findMode(array) {
-  if (array.length === 1) return array[0];
   let store = {};
   let max = 0;
   array.forEach(num => {
@@ -30,7 +30,6 @@ function findMode(array) {
 }
 
 function findMean(array) {
-  if (array.length === 1) return array[0];
   let sum = array.reduce((total, num) => {
     return total + num;
   });
