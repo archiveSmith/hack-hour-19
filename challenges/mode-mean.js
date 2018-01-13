@@ -11,6 +11,9 @@
 
 
 function modemean(array) {
+	if(array.length===1){
+		return true;
+	}
 	function mode(array){
 		let mode = 0;
 		let modeCount = 0; 
