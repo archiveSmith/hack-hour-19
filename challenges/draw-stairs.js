@@ -13,16 +13,15 @@
 
 */
 
-function drawStairs(n) {
-  var myPrint = "";
-  space = " ";
-  var asterik = '*';
-  for(var i = n; i> 0; i--) {
-    myPrint+=space.repeat(i-1).concat(asterik.repeat(n-(i-1))) + "\n";
+function drawStairs (n)  {
+  let myStairs = '';
+  let asterik = '*';
+  let space = ' ';
+  for( var i = 1; i<= n; i++) {
+    myStairs +=  ' '.repeat(n-i) + '*'.repeat(i) + '\n'; 
   }
-  console.log(myPrint);
+  console.log(myStairs);
 }
 drawStairs(6);
-
 
 module.exports = drawStairs;
