@@ -20,7 +20,6 @@ function findMode(array) {
   array.forEach(num => {
     store[num] = store[num] + 1 || 1;
   });
-  console.log(store);
   for (let key in store) {
     if (store[key] > max) {
       max = key;
