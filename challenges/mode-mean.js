@@ -11,17 +11,24 @@
 
 
 function modemean(array) {
-  const sum = array.reduce((acc, v) => {
-    acc += v;
-    return acc;
-  }, 0);
-  const mean = Math.floor(sum/(array.length));
+  const length = array.length;
+  const mean = 0;
+  let mode = 0;
+  const track = {};
 
-  const sorted = array.sort((a, b) => a - b);
-  const middle = Math.ceil(array.length/2);
-  const mode = array[middle];
+  if (length === 1) {
+    return true;
+  } else {
+    const sum = array.reduce((acc, v) => acc + v, 0);
+    const mean = Math.floor(sum/length);
 
-  return sorted === mode;
+    for (var i = 0; i < array.length; i++) {
+      if (!track[array[i]]) track[array[i]] = 1;
+      else track[array[i]] += 1;
+      if (track[array[i]] > mode) mode = array[i];
+    }
+    return mode === mean;
+  }
 }
 
 module.exports = modemean;
