@@ -66,4 +66,4 @@ function getToEnd(head) {
 //console.log(kthToLastNode(3, b));
 
 
-//module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+module.exports = {Node: Node, kthToLastNode: kthToLastNode};
