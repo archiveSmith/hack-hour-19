@@ -8,6 +8,7 @@
  * Return true or false
  *
  */
+<<<<<<< HEAD
 var newmyArr = array.sort().reverse();
 
 function modemean(array) {
@@ -44,5 +45,12 @@ var count = 0;
 
 }
 modemean(array)
+=======
+
+
+function modemean(array) {
+
+}
+>>>>>>> c060d19ffed168e7524c284bc3486ccd146b9a9b
 
 module.exports = modemean;
