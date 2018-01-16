@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+<<<<<<< HEAD
     //calculate mean;
     let totalMean = 0;
     for (let i = 0; i < array.length; i++) {
@@ -29,6 +30,9 @@ function modemean(array) {
         modeArr[array[i]] += 1
     }
     Object.values(modeArr);
+=======
+
+>>>>>>> ac9bfba09787a02c8aeac2eac1f4a471666eba05
 }
 
 module.exports = modemean;
