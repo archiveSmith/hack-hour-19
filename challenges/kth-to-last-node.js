@@ -24,16 +24,18 @@ function Node(val) {
 
 
 function kthToLastNode(k, head) {
-  let head = new Node (head); //current = A
-  let current = head.next;
+  let current = head; //current = A
   let counter = 0; //5 in a list?
-    if (current) { counter++; }
-  let difference = counter - k; //true index
-  let kthNode;
-    for (let i=0; i<=difference; i++) { // k = 2
-    kthNode = head.next;
+    while (current) { 
+      current = current.next;
+      counter++; 
     }
-  return kthNode;
+  let difference = counter - k; //true index
+  current = head;
+    for (let i=0; i<difference; i++) { // k = 2
+    current = current.next;
+    }
+  return current;
 }
   
 
