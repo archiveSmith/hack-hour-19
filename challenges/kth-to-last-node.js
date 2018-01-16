@@ -24,7 +24,11 @@ function Node(val) {
 function kthToLastNode(k, head) {
   let finalNode = getToEnd(head);
   let toGo = finalNode - k;
-  console.log(toGo);
+
+  if (toGo < 0) {
+    return undefined;
+  }
+
   let temp = head;
   while(toGo > 0) {
     temp = temp.next;
