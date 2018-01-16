@@ -53,6 +53,19 @@ function tests() {
   for (let i = 0; i < 21; i ++) {
     console.log(kthToLastNode(i, head));
   }
+
+  const a = new Node('A');
+  const b = new Node('B');
+  const c = new Node('C');
+  const d = new Node('D');
+  const e = new Node('E');
+
+  a.next = b;
+  b.next = c;
+  c.next = d;
+  d.next = e;
+
+  console.log(kthToLastNode(2, a));
 }
 
 //tests();
