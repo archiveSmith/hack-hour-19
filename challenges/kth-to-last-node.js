@@ -34,7 +34,12 @@ function kthToLastNode(k, head) {
     temp = temp.next;
     toGo--
   }
-  return temp.value;
+
+  if (temp.value) {
+    return temp.value;
+  } else {
+    return undefined;
+  }
 }
 
 function getToEnd(head) {
@@ -45,6 +50,7 @@ function getToEnd(head) {
   }
   return count;
 }
+
 
 // const a = new Node('A');
 // const b = new Node('B');
@@ -58,4 +64,6 @@ function getToEnd(head) {
 // d.next = e;
 // console.log(kthToLastNode(-5, a)); //-> returns 'D' (the value on the second to last node)
 //console.log(kthToLastNode(3, b));
+
+
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
