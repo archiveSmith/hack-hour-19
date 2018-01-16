@@ -30,9 +30,11 @@ function kthToLastNode(k, head) {
     }
     recurse(head)
 
-    let index = arr.length - 1 - k
+    let index = arr.length - k
     
     return arr[index]   
 }
+
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
