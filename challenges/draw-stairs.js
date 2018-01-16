@@ -14,8 +14,9 @@
 */
 
 function drawStairs(n) {
-
+    
+    for (i=1; i<=n; i++) console.log((' '.repeat(n-i)+'*'.repeat(i)));
 }
-
+console.log(drawStairs(10));
 
 module.exports = drawStairs;

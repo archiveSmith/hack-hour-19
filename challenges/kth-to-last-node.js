@@ -18,11 +18,24 @@
 
 function Node(val) {
   this.value = val;
-  this.next = null;
+  this.next = null; newNode
 }
+
+
 
 function kthToLastNode(k, head) {
-
+  let head = new Node (head); //current = A
+  let current = head.next;
+  let counter = 0; //5 in a list?
+    if (current) { counter++; }
+  let difference = counter - k; //true index
+  let kthNode;
+    for (let i=0; i<=difference; i++) { // k = 2
+    kthNode = head.next;
+    }
+  return kthNode;
 }
+  
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
