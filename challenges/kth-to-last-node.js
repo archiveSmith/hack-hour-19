@@ -21,8 +21,23 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k, head) {
 
+function kthToLastNode(k, head) {
+    // accounts for the head node and the last node which would also be null
+    let nodes = (head.next !== null)? 2 : 1;
+    let currentNode = head.next;
+
+    while(currentNode.next !== null) {
+        currentNode = currentNode.next;
+        nodes++;
+    }
+
+    let kThtoLast = nodes - k;
+    currentNode = head;
+    for(let i = 0; i < kThtoLast; i++){
+        currentNode = currentNode.next;
+    }
+    return currentNode.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
