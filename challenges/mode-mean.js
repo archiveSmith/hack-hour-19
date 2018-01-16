@@ -12,7 +12,6 @@
 
 function modemean(array) {
   const length = array.length;
-  const mean = 0;
   let mode = 0;
   const track = {};
 
