@@ -3,10 +3,7 @@
  */
 
 function pow(base, power) {
-    if (base > 0 && power % 1 != 0) {
-        return NaN
-    }
-    if (power = 0) {
+    if (power === 0) {
         return 1
     } else {
         return base * pow(base, power - 1);
