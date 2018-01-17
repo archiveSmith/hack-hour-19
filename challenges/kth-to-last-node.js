@@ -35,6 +35,9 @@ function kthToLastNode(k, head) {
   }
   //current was recently passes in current.next so reassign current to head again
   current = head;
+  if (!current.value) {
+    return undefined;
+  }
   //iterate through the length until you reach the difference of length and k to return the value that your looking for
   for (let i = 0; i <= length - k; i++) {
     current = current.next;
