@@ -3,6 +3,9 @@
  */
 
 function pow(base, power) {
+    if (base < 0) {
+        base * -1
+    }
     if (power = 0) {
         return 1
     } else {
