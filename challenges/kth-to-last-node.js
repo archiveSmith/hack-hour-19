@@ -32,6 +32,9 @@ function kthToLastNode(k, head) {
 	//
 	current = head; 
 	//let returnIndex = length - k; 
+	if(length===0){
+		return undefined; 
+	}
 	if(length===k){
 		return current.value; 
 	} 
