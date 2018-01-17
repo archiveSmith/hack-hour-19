@@ -14,7 +14,6 @@
 */
 
 function drawStairs(n) {
-<<<<<<< HEAD
     let next;
     let extra;
     let stairs;
@@ -24,9 +23,7 @@ function drawStairs(n) {
         stairs = ' '.repeat(next) + '*'.repeat(extra);
         console.log(stairs);
     }
-=======
 
->>>>>>> ac9bfba09787a02c8aeac2eac1f4a471666eba05
 }
 
 
