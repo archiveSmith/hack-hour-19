@@ -40,6 +40,8 @@ function kthToLastNode(k, head) {
   // Find the distance to traverse
   let difference = count - k;
   let index = 0;
+
+  // Get kth from last node
   while (index < difference) {
     index += 1;
     current = current.next;
@@ -47,5 +49,12 @@ function kthToLastNode(k, head) {
 
   return current.value;
 }
+
+// function kthToLast(k, head) {
+//   if (head === undefined) {
+//     return 'no value'
+//   }
+
+// }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
