@@ -3,11 +3,10 @@
  */
 
 function pow(base, power) {
-  let num =  base;
-  num * base;
-  if(power === 1) return num;
 
-  return num * pow(base, power-1);
+  if(power === 0) return 1;
+
+  return base * pow(base, power-1);
 }
-console.log(pow(3, 3));
+console.log(pow(2, 3));
 module.exports = pow;
