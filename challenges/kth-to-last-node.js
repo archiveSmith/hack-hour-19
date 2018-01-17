@@ -44,6 +44,4 @@ function kthToLastNode(k, head) {
 }
 
 
-
-
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
