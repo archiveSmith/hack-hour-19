@@ -14,7 +14,14 @@
  */
 
 function reverseInPlace(array) {
-
+    const originalLength = array.length;
+    const doubleLength = originalLength * 2;
+    for (let i = 0; i < originalLength; i++){
+        array[doubleLength - 2 - i] = array[i];
+    }
+    array.splice(0, originalLength-1);
+    return array;
+    // OR extend the array by one, and continuously move. seems worse that way.
 }
 
 module.exports = reverseInPlace;
