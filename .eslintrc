@@ -1,4 +1,15 @@
 {
-  "extends": "airbnb",
-  "root": true
+  "extends": "eslint:recommended",
+   "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true
+      }
+    "rules": {
+        "semi": 2,
+        "no-undef": "error"
+    }
 }
