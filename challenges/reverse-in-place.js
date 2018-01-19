@@ -14,6 +14,18 @@
  */
 
 function reverseInPlace(array) {
+    let first = 0;
+    let last = array.length - 1;
+
+    while (first < last) {
+      let a = array[first];
+      array[first] = array[last];
+      array[last] = a;
+
+      first++;
+      last--;
+    }
+    return array;
 
 }
 
