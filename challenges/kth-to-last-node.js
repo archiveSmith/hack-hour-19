@@ -40,6 +40,7 @@ function kthToLastNode(k, head) {
   for (let i=0; i<steps; i++){
     itr = itr.next;
   }
+  if (!itr) return undefined;
   return itr.value;
 }
 
