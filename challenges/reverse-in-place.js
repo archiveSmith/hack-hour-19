@@ -15,10 +15,10 @@
 
 function reverseInPlace(array) {
   let len = array.length;
-  for (let i = 0; i < (len-1)/2; i ++) {
-    array[i] += array[len-1-i];
-    array[len-1-i] = array[i] - array[len-1-i];
-    array[i] -= array[len-1-i];
+  for (let i = 0; i < len/2; i ++) {
+    let temp = array[i];
+    array[i] = array[len-1-i];
+    array[len-1-i] = temp;
   }
   return array;
 }
@@ -38,6 +38,13 @@ function tests() {
   console.log(y);
   console.log(reverseInPlace(y));
   console.log(reverseInPlace(y));
+  let z = [];
+  for (let i = 65; i < 90; i ++) {
+    z.push(String.fromCharCode(i));
+  }
+  console.log(z);
+  console.log(reverseInPlace(z));
+  console.log(reverseInPlace(z));
 }
 
 //tests()
