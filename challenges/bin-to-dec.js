@@ -14,7 +14,8 @@
  */
 
 function binToDec(binary) {
-
+    let decimal = parseInt(binary, 2);
+    return decimal;
 }
 
 module.exports = binToDec;
