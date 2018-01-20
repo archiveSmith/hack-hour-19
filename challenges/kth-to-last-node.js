@@ -19,10 +19,35 @@
 function Node(val) {
   this.value = val;
   this.next = null;
+
+  // let currentNode = new Node(val);
+  // if(!this.head){
+  //   this.head = currentNode;
+  //   this.count = 0;
+  // } else {
+  //   currentNode =
+  //   this.count
+  // }
 }
+
 
 function kthToLastNode(k, head) {
+  let currentNode = new Node(k);
+  head.value = 0;
+  let check = head;
+  console.log(check);
+  console.log(currentNode);
+  // let currentNode = new Node(5);
+  // currentNode.head = head;
+  // this.head.count = 1;
+  // this.count = k;
 
 }
+// let dog = kthToLastNode(2,{value: 3, next: null});
+// let cat = new Node(5);
+// console.log(dog);
+// console.log(cat);
+let dog = kthToLastNode(3, {dog:4});
+console.log(dog);
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
