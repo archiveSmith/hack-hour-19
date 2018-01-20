@@ -14,7 +14,21 @@
  */
 
 function binToDec(binary) {
+  const length = binary.length - 1;
+  let currentPosition = length;
 
+  let sum = 0;
+
+  while (currentPosition >= 0) {
+    const value = 2 ** currentPosition;
+
+    if (binary[length - currentPosition] === '1') {
+      sum += value;
+    }
+
+    currentPosition -= 1;
+  }
+  return sum;
 }
 
 module.exports = binToDec;
