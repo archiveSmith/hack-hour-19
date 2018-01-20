@@ -31,4 +31,19 @@ function binToDec(binary) {
   return sum;
 }
 
+function decToBin(dec) {
+  let num = '';
+
+  while (dec > 0) {
+    if (dec % 2 === 1) {
+      num += '1';
+    } else {
+      num += '0';
+    }
+
+    dec = Math.floor(dec / 2);
+  }
+  return num;
+}
+
 module.exports = binToDec;
