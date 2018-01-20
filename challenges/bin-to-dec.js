@@ -14,10 +14,11 @@
  */
 
 function binToDec(binary) {
-  // Recursive function
   if (!binary.length) return 0;
-  return binToDec(binary.slice(1)) + binary[0] ? Math.pow(2, binary.length - 1) : 0;
+  let addThis = 0;
+  if (binary[0] === '1') addThis = Math.pow(2, binary.length - 1);
+  return addThis + binToDec(binary.slice(1));
 }
 
-console.log(binToDec(0));
+console.log(binToDec(10));
 module.exports = binToDec;
