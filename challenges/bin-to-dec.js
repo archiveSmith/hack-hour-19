@@ -22,7 +22,8 @@ function binToDec(binary) {
     }
     count++;
   }
-  return sum;
+  return sum; 
+  //
 }
 
 module.exports = binToDec;
