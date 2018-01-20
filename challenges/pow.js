@@ -3,6 +3,6 @@
  */
 
 function pow(base, power) { 
-    return (power === 0) ? 1 : (power === 1) ? base : base * pow(base, power - 1);
+  return (power === 0) ? 1 : (power === 1) ? base : base * pow(base, power - 1);
 }
 module.exports = pow;
