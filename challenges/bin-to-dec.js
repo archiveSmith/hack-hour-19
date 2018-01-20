@@ -20,7 +20,7 @@
      if (bins[i] === 1) {
        acc += Math.pow(2, j);
      }
-   }
+   } 
    return acc;
  }
 
