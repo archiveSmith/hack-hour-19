@@ -2,16 +2,8 @@
  * Use recursion!
  */
 
-function pow(base, power) {
-  let result = 1;
-  if (power === 0) {
-    return base;
-  }
-  if (power === 1) {
-    return result;
-  }
-
-  return result * pow(base, power - 1);
+function power(base, exponent) {
+  return exponent == 0 ? 1 : base * power(base, --exponent);
 }
 
 module.exports = pow;
