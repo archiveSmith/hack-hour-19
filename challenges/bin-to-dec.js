@@ -37,3 +37,13 @@ return digit;
 }
 
 module.exports = binToDec;
+
+//after talking to andrew, I see now that I could have actually
+//done the algo to do this. He walked me through starting at the last
+//number calculating powers whether or not the digit is a 1.
+
+//when I have time I'd like to come back to this and try it from scratch
+//not sure yet how the algo would change for different bases (hex,oct,etc.)
+
+
+
