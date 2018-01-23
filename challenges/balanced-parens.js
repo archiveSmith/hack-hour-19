@@ -25,7 +25,36 @@
  */
 
 function balancedParens(input){
-
+	let squareL = 0;
+	let squareR = 0;
+	let parenL = 0;
+	let parenR = 0; 
+	let curlyL = 0;
+	let curlyR = 0; 
+	for(let char of input){
+		if(char=="("){
+			parenL++;
+		}
+		if(char==")"){
+			parenR++;
+		}
+		if(char=="{"){
+			curlyL++;
+		}
+		if(char=="}"){
+			curlyR++;
+		}
+		if(char=="["){
+			squareL++;
+		}
+		if(char=="]"){
+			squareR++;
+		}
+	} 
+	if((squareL===squareR)&&(parenL===parenR)&&(curlyL===curlyR)){
+		return true; 
+	}
+	return false;
 }
 
 module.exports = balancedParens;
