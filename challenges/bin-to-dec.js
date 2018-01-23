@@ -21,7 +21,7 @@
 // Set the the currentDigit to the previous digit of the binary number.
 // 	Repeat step 3 until all digits have been multiplied.
 // 	Sum the result of step 3 to get the answer number.
-
+//NOT COMPLETE- DO RECUSIVLEY
 function binToDec(binary) {
 	// return parseInt((binary + '')
 	// 	.replace(/[^01]/gi, ''), 2);
