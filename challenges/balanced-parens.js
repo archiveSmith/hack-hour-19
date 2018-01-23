@@ -64,6 +64,4 @@ function balancedParens(input){
   return leftCount === rightCount;
 }
 
-console.log(balancedParens('[({})]'))
-
 module.exports = balancedParens;
