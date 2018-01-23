@@ -120,5 +120,5 @@ function tests() {
    *  binToDec('0101') -> 5
    */
 }
-tests()
-//module.exports = binToDec;
+//tests()
+module.exports = binToDec;
