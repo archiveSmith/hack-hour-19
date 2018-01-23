@@ -24,8 +24,28 @@
  *
  */
 
-function balancedParens(input){
-
+function findClosingIndex(char,input){
+  if(char === '['){ return input.indexOf(']')}
+  if(char === '{'){ return input.indexOf('}')}
+  if(char === '('){ return input.indexOf(')')}
 }
+
+function balancedParens(input){
+  input = input.replace(/[^\{\}\(\)\[\]]/g,'')
+  
+  if(input.length === 0){return true}
+  
+  let itr = input[0];
+  if(itr === '}' || itr === ')' || itr === ']'){return false}
+  
+  let closingIndex = findClosingIndex(itr,input);
+  if(closingIndex === -1){ return false }
+  
+  let insideParensValue = balancedParens(input.substring(1,closingIndex));
+  if(!insideParensValue){return false}
+  
+  return balancedParens(input.substring(closingIndex+1))
+}
+
 
 module.exports = balancedParens;
