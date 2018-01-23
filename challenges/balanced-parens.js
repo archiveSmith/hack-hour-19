@@ -26,7 +26,12 @@
 
 function balancedParens(input) {
   const winrarPairs = [["[", "]"], ["(", ")"], ["<", ">"], ["{", "}"]];
-  if (input.length === 1 || input.length % 2 === 1) {
+  if (
+    input.length === 1 ||
+    input.length % 2 === 1 ||
+    /\d/.test(input) ||
+    !/^[A-Za-z]+$/.test(input)
+  ) {
     return false;
   }
   if (input.length === 2) {
@@ -61,12 +66,14 @@ function balancedParens(input) {
   }
 }
 
-console.log("false: ", balancedParens("("));
-console.log("true: ", balancedParens("()"));
-console.log("false: ", balancedParens("))("));
-console.log("true: ", balancedParens("(())"));
-console.log("true: ", balancedParens("[](){}"));
-console.log("true: ", balancedParens("[({})]"));
-console.log("false: ", balancedParens("[(]{)}"));
+// console.log("false: ", balancedParens("("));
+// console.log("true: ", balancedParens("()"));
+// console.log("false: ", balancedParens("))("));
+// console.log("true: ", balancedParens("(())"));
+// console.log("true: ", balancedParens("[](){}"));
+// console.log("true: ", balancedParens("[({})]"));
+// console.log("false: ", balancedParens("[(]{)}"));
+console.log("false: ", balancedParens("[]<6"));
+console.log("false: ", balancedParens("[]<s"));
 
 module.exports = balancedParens;
