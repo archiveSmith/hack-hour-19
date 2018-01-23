@@ -53,6 +53,6 @@ function balancedParens(input){
     return (output.length === 0) ? true : false;
     // console.log(output)
 }       
-console.log(balancedParens('([])[]{}'));
+// console.log(balancedParens('([])[]{}'));
 
 module.exports = balancedParens;
