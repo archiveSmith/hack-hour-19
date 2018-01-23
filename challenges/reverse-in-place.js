@@ -23,5 +23,5 @@ function reverseInPlace(array) {
         endIndex -= 1;
     }
 }
-
+    
 module.exports = reverseInPlace;
