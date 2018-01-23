@@ -31,7 +31,7 @@ function balancedParens(input){
     if (split[i] === '(') counter += 1;
     else if (split[i] === ')') counter -= 1;
   }
-  return counter === 0 ? true : false;
+  return counter === 0;
 }
 
 module.exports = balancedParens;
