@@ -45,11 +45,14 @@ function balancedParens(input) {
     i < input.length - 1 && j > input.length / 2;
     i++, j--
   ) {
-    // console.log(input.charAt(i), input.charAt(j));
     for (let k = 0; k < winrarPairs.length; k++) {
       if (
+        //pairs
         input.charAt(i) === winrarPairs[k][0] &&
-        input.charAt(j) !== winrarPairs[k][1]
+        input.charAt(j) !== winrarPairs[k][1] &&
+        //adjacent
+        (input.charAt(i) === winrarPairs[k][0] &&
+          input.charAt(i + 1) !== winrarPairs[k][1])
       ) {
         return false;
       }
@@ -58,12 +61,12 @@ function balancedParens(input) {
   }
 }
 
-// console.log("false: ", balancedParens("("));
-// console.log("true: ", balancedParens("()"));
-// console.log("false: ", balancedParens("))("));
-// console.log("true: ", balancedParens("(())"));
-// console.log("true: ", balancedParens("[](){}"));
-// console.log("true: ", balancedParens("[({})]"));
-// console.log("false: ", balancedParens("[(]{)}"));
+console.log("false: ", balancedParens("("));
+console.log("true: ", balancedParens("()"));
+console.log("false: ", balancedParens("))("));
+console.log("true: ", balancedParens("(())"));
+console.log("true: ", balancedParens("[](){}"));
+console.log("true: ", balancedParens("[({})]"));
+console.log("false: ", balancedParens("[(]{)}"));
 
 module.exports = balancedParens;
