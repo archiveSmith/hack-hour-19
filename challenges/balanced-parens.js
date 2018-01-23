@@ -44,9 +44,12 @@ function balancedParens(input){
                 if (lastOpen.pop() !== '(') {
                     return false;
                 }
-                if (openParenth < closeParenth || (openCurly !== closeCurly || openSquare !== closeSquare)) {
+                if (openParenth < closeParenth) {
                     return false;
                 }
+                // if (openParenth < closeParenth || (openCurly !== closeCurly || openSquare !== closeSquare)) {
+                //     return false;
+                // }
             closeParenth++
                 break;  
             case '[':
@@ -58,9 +61,12 @@ function balancedParens(input){
             if (lastOpen.pop() !== '[') {
                 return false;
             }
-                if (openSquare < closeSquare || (openCurly !== closeCurly || openParenth !== closeParenth)) {
-                    return false;
-                }
+            if (openSquare < closeSquare) {
+                return false;
+            }
+                // if (openSquare < closeSquare || (openCurly !== closeCurly || openParenth !== closeParenth)) {
+                //     return false;
+                // }
             closeSquare++
                 break; 
             case '{':
@@ -73,9 +79,12 @@ function balancedParens(input){
                 return false;
             }
 
-                if (openCurly < closeCurly || (openSquare !== closeSquare || openParenth !== closeParenth)) {
-                    return false;
-                }
+            if (openCurly < closeCurly) {
+                return false;
+            }
+                // if (openCurly < closeCurly || (openSquare !== closeSquare || openParenth !== closeParenth)) {
+                //     return false;
+                // }
             closeCurly++
                 break;                               
         }
