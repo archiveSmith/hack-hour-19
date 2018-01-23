@@ -42,6 +42,6 @@ function balancedParens(input) {
     return false;
 }
 
-console.log(balancedParens('()'))
+
 
 module.exports = balancedParens;
