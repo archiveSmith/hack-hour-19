@@ -58,7 +58,7 @@ function tests() {
 
   console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }'));
   console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
-  console.log(balancedParens('[(]{)}'));
+  console.log(balancedParens('[({[({})]var hubble = function({{}[]}) { telescopes.awesome() };})]'));
 
 
 
