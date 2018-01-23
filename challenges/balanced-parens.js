@@ -26,6 +26,20 @@
 
 function balancedParens(input){
 
+    if (input.length%2 !== 0) return false;
+
+    let firstHalfInput = input.split('').slice(0,input.length/2); // half the array
+    let mapArr = firstHalfInput.map(function(el){
+        return el === "'" ? "'" : el === "(" ? ")" : el === ")" ? "(" : el === "[" ? "]" : el === "]" ? "[" : el === "{" ? "}" : el === "}" ? "{" : ''
+    })
+    let secondHalfInput = input.split('').slice(input.length/2);
+    for (let i=0; i<secondHalfInput.length; i++) {
+        if (mapArr[i] !== secondHalfInput[i]) return false;
+        else return true;
+    }
 }
+
+
+
 
 module.exports = balancedParens;
