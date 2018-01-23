@@ -25,7 +25,27 @@
  */
 
 function balancedParens(input){
-
+    let container = [];
+    let inputItems = input.trim().split('');
+    let balancedItems = true;
+    
+    inputItems.forEach((item) => {
+      
+      if (item === '(' || item === '[' || item === '{') {
+        container.push(item);
+      }
+    
+      if (item === ')') {
+      balancedItems = (container.pop() === '(') ? true : false;
+      }
+      else if (item === ']') {
+        balancedItems = (container.pop() === '[') ? true : false;
+      }
+      else if (item === '}') {
+        balancedItems = (container.pop() === '{') ? true : false;
+      }
+    });
+    return balancedItems;
 }
 
 module.exports = balancedParens;
