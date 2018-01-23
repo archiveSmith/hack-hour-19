@@ -20,5 +20,5 @@ function binToDec(binary) {
   return addThis + binToDec(binary.slice(1));
 }
 
-console.log(binToDec(10));
+console.log(binToDec('101'));
 module.exports = binToDec;
