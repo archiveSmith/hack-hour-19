@@ -18,7 +18,16 @@
  */
 
 function romanNumeral(n) {
-
-}
+    const number = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const numeral = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+    let romanNumeral = [];
+    for (let i = 0; i < number.length; i++) {
+      while (n % number[i] < n) {
+        romanNumeral.push(numeral[i]);
+        n -= number[i];
+      }
+    }
+     return romanNumeral.join('');
+  }
 
 module.exports = romanNumeral;
