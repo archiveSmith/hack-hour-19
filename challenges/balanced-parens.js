@@ -24,7 +24,28 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+    input = input.split("")
+    for (let i = 0; i < input.length / 2; i++) {
+        if (input[i].indexOf(")") !== -1) {
+            return false
+        } else {
+            let newLength = input.slice(input.length / 2, input.length).reverse;
+            for (let j = 0; j < newLength.length; j++) {
+                if (newLength[j].indexOf(")") === input[i].indexOf("(")) {
+                    return true;
+                }
+            }
+        }
+
+    }
+    return false;
+}
+
+
+
+
+function balancedParens(input) {
 
 }
 

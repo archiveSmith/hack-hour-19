@@ -14,7 +14,23 @@
  */
 
 function binToDec(binary) {
+<<<<<<< HEAD
+    let arr = binary.split("");
+    for (i = arr.length - 1; i >= -1; i--) {
+        if (arr[i] === "0" && arr === arr[0]) {
+            return i
+        } else if (arr[-1] === undefined) {
+            return i + 1
+        } else {
+            arr.pop(arr[i])
+            return i + binToDec(arr);
+        }
+    }
+}
+console.log(binToDec("11"))
+=======
 
 }
+>>>>>>> ec0683332cd9ad8f15bb9ab7d6f64d9fba61abec
 
 module.exports = binToDec;
