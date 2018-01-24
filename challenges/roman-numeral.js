@@ -18,7 +18,24 @@
  */
 
 function romanNumeral(n) {
-
+    const romanNumerals = {'1': 'I', '4': 'IV', '5': 'V', '9': 'IX', '10': 'X', '40': 'XL', '50': 'L', '90': 'XC', '100': 'CD', '400': 'D', '500': 'D', '900': 'CM', '1000': 'M' };
+    
+    const romanNumeralsNums = Object.keys(romanNumerals);
+    let str = '';
+    let firstGreater;
+    
+    while(n > 0){
+      for (let i = 0; i < romanNumeralsNums.length; i++){
+        if (n < parseInt(romanNumeralsNums[i])) {
+          if(i - 1 >= 0) {
+             str += romanNumerals[romanNumeralsNums[i-1]]; 
+             n -= romanNumeralsNums[i-1];
+             break;
+          }
+        }
+      }
+    }
+    return str;
 }
 
 module.exports = romanNumeral;
