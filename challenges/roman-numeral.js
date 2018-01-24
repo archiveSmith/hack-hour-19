@@ -24,17 +24,25 @@ function romanNumeral(n) {
     let str = '';
     let firstGreater;
     
-    while(n > 0){
-      for (let i = 0; i < romanNumeralsNums.length; i++){
-        if (n < parseInt(romanNumeralsNums[i])) {
-          if(i - 1 >= 0) {
-             str += romanNumerals[romanNumeralsNums[i-1]]; 
-             n -= romanNumeralsNums[i-1];
-             break;
+    if (n > 0){
+    	let largeNumCheck = Math.floor(n / 1000);
+      if (largeNumCheck > 0){
+        n -= largeNumCheck * 1000;
+        str += new Array(largeNumCheck).fill('M').join('');
+      }
+      while(n > 0){
+        for (let i = 0; i < romanNumeralsNums.length; i++){
+          if (n < parseInt(romanNumeralsNums[i])) {
+            if(i - 1 >= 0) {
+               str += romanNumerals[romanNumeralsNums[i-1]]; 
+               n -= romanNumeralsNums[i-1];
+               break;
+            }
           }
         }
       }
-    }
+    
+     }
     return str;
 }
 
