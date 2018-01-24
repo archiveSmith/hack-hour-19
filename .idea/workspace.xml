@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b32fd79-606d-46a2-b838-4e8004ec6d45" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/challenges/balanced-parens.js" />
-      <change beforePath="$PROJECT_DIR$/challenges/bin-to-dec.js" afterPath="$PROJECT_DIR$/challenges/bin-to-dec.js" />
-      <change beforePath="$PROJECT_DIR$/challenges/index.html" afterPath="$PROJECT_DIR$/challenges/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -193,12 +191,12 @@
       <workItem from="1516210782035" duration="378000" />
       <workItem from="1516383410861" duration="1777000" />
       <workItem from="1516469635671" duration="2347000" />
-      <workItem from="1516728097436" duration="2673000" />
+      <workItem from="1516728097436" duration="2789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14145000" />
+    <option name="totallyTimeSpent" value="14261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="852" extended-state="6" />
