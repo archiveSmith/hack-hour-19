@@ -24,6 +24,7 @@
  *
  */
 
+<<<<<<< HEAD
 function balancedParens (input) {
     var stack = [];
     var open = { '{': '}', '[': ']', '(': ')' };
@@ -40,5 +41,10 @@ function balancedParens (input) {
     
     return stack.length === 0;
   };
+=======
+function balancedParens(input){
+
+}
+>>>>>>> ec0683332cd9ad8f15bb9ab7d6f64d9fba61abec
 
 module.exports = balancedParens;
