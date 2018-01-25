@@ -14,11 +14,20 @@
  *      500   ->    D
  *      900   ->    CM
  *      1000  ->    M
- * 
+ *
  */
 
-function romanNumeral(n) {
-
-}
+ function romanNumeral(n) {
+  var numerals = [1000, 'M', 900, 'CM', 500, 'D', 400, 'CD', 100, 'C',
+                 90, 'XC', 50, 'L', 40, 'XL', 10, 'X', 9, 'IX', 5, 'V', 4, 'IV', 1, 'I'];
+   let numeral = '';
+   for (var idx = 0; n > 0 && idx < numerals.length; idx += 2) {
+     while (n >= numerals[idx]) {
+       numeral += numerals[idx + 1];
+       n -= numerals[idx];
+     }
+   }
+   return numeral;
+ }
 
 module.exports = romanNumeral;
