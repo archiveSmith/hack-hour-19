@@ -9,7 +9,17 @@
  */
 
 function subsetSum(array, target) {
+  if(array.reduce((acc,cur)=> acc + cur) === target) return true
+  let subsetValues = array.map((elem,index) => {
+    let clone = array.slice(0)
+    clone.splice(index,1)
+    let truthValues = clone.map(el => subsetSum(clone,target))
+    return truthValues.reduce((acc,cur)=> (cur ? cur : acc),false)
+  })
+
+  return subsetValues.reduce((acc,cur)=> (cur ? cur : acc),false)
 
 }
+
 
 module.exports = subsetSum;
