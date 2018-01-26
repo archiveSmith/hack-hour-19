@@ -9,7 +9,15 @@
  */
 
 function subsetSum(array, target) {
-
-}
+    count = 0;
+    let add = array.map(ele => (ele + array[count]));
+    console.log(add);
+    let filterBoolean = add.filter(ele => ele === target);
+    while(filterBoolean.length === 0 && add.length > 0) {
+      add.shift();
+      return subsetSum(add,target);
+    }
+      return filteredBoolean.length !== 0;
+   }
 
 module.exports = subsetSum;
