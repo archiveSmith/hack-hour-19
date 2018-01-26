@@ -18,9 +18,10 @@
  */
 
 function romanNumeral(n) {
+    let num = 0
     let romanNum = { "M": 1000, "CM": 900, "D": 500, "CD": 400, "C": 100, "XC": 90, "L": 50, "XL": 40, "X": 10, "IX": 9, "V": 5, "IV": 4, "I": 1 };
     let result = "";
-    while (n > 0) {
+    while (num <= n) {
         for (let key in romanNum) {
             if (romanNum[key] === n) {
                 console.log(key)
@@ -28,8 +29,8 @@ function romanNumeral(n) {
                 return result;
             }
         }
-        n--
+        num++
     }
 }
-console.log(romanNumeral(4))
+console.log(romanNumeral(7))
 module.exports = romanNumeral;
