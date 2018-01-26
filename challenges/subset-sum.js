@@ -9,7 +9,21 @@
  */
 
 function subsetSum(array, target) {
+    let currentSum = 0;
 
+    for (let pointer = 0; pointer <= array.length; pointer += 1) {
+      currentSum = array[pointer];
+      // console.log(currentSum);
+      
+      for (let nextCheck = pointer + 1; nextCheck <= array.length; nextCheck += 1) {
+        if (currentSum === target) {
+          return true;
+        }
+        if (currentSum > target || nextCheck === pointer) {
+          currentSum = currentSum + array[nextCheck];
+        }
+      }
+    }
 }
 
 module.exports = subsetSum;
