@@ -11,20 +11,50 @@
 function subsetSum(array, target) {
   let nums = array.slice();
   nums = nums.sort();
-  let sums = new Array(target+1);
-  sums.fill(false);
-  sums[0] = true;
-
+  let min = 0;
+  let max = 0;
   for (num of nums) {
-    for (let i = sums.length-1; i >= 0; i--) {
-      if (sums[i]) {
-        sums[i+num] = true;
-      }
+    if (num < 0) {
+      min += num;
+    } else {
+      max += num;
     }
   }
 
+  min = min * -1;
+  // console.log(min);
+  // console.log(max);
 
-  return sums[target];
+  let sums = [];
+  let indices = [];
+  //sums.fill(false);
+  sums[0+min] = true;;
+  indices.push(0+min);
+
+
+
+  for (num of nums) {
+    let newIndices = [];
+    for (index of indices) {
+      //console.log('index', index);
+      let x = index + num;
+      //console.log(x);
+      if (!sums[x]) {
+        newIndices.push(x);
+      }
+    }
+    for (newIndex of newIndices) {
+      sums[newIndex] = true;
+      indices.push(newIndex);
+    }
+  }
+
+  //console.log(sums);
+  if(sums[target+min]) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function tests() {
