@@ -10,6 +10,7 @@
 
 function subsetSum(array, target) {
 
+
     if (target - array[0] === 0) {
         return true
     } else if (target - array[0] > target) {
@@ -19,6 +20,7 @@ function subsetSum(array, target) {
         target = target - array[i];
         return target - sbusetSum(array, target)
     }
+
 }
 
 module.exports = subsetSum;
