@@ -9,6 +9,7 @@
  */
 
 function subsetSum(array, target) {
+    if (array.length===0) return false;
     let results = []
     function resultBuilder(array, index, sum) {
         if (index === array.length-1){
