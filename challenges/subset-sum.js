@@ -9,34 +9,19 @@
  */
 
  function subsetSum(array, target) {
-   function subset(arra, arra_size) {
-     var result_set = [],
-     result;
-
-     for(var x = 0; x < Math.pow(2, arra.length); x++) {
-       result = [];
-       i = arra.length - 1;
-       do {
-         if( (x & (1 << i)) !== 0) {
-           result.push(arra[i]);
-         }
-       }  while(i--);
-
-     if(result.length >= arra_size) {
-       result_set.push(result);
-     }
-   }
-    for (var i = 0; i < result_set.length; i++) {
-      var combo = result_set[i];
-      var reduced = combo.reduce((a,b) => a+b, 0);
-
-      if (reduced === target) {
-        return true;
-      }
+  function isSubsetSum(set, n, sum) {
+    if (sum === 0) {
+      return true;
     }
-    return false;
+    if (n === 0 && sum !== 0) {
+      return false;
+    }
+    if (set[n-1] > sum) {
+      return isSubsetSum(set, n-1, sum);
+    }
+    return isSubsetSum(set, n-1, sum) || isSubsetSum(set, n-1, sum - set[n-1]);
   }
-  return subset(array, 1);
+  return isSubsetSum(array, array.length, target);
 }
 
 module.exports = subsetSum;
