@@ -17,14 +17,34 @@
  * 
  */
 //should put roman numerals into a node list instead of ugly if else
-// class Node {
-// 	constructor(value) {
-// 		this.value = value;
-// 		this.remainder = null;
-// 	}
-//
-// }
+class Node {
+	constructor(value) {
+		this.value = value;
+		this.numeral = null;
+		this.next = null;
+	}
 
+}
+
+
+function romanNumeral(n, list) {
+	//console.log('originalNumber', n);
+	if(!list) {
+		list = new Node(n);
+	} else {
+		list.value = n;
+		if(list.value !== 0) {
+			list.remainder = list.value - checkDivisibility(list.value)[1];
+			list.numeral = checkDivisibility(list.value)[0];
+			console.log(list);
+			list.next = romanNumeral(list.remainder, list);
+		}
+	}
+
+	return list;
+}
+
+//this works without node list
 function romanNumeral(n, allNumerals = []) {
 	//console.log('originalNumber', n);
 	if(n !== 0) {
@@ -69,6 +89,6 @@ function checkDivisibility(val) {
 // romanNumeral(5);
 // romanNumeral(9);
 // romanNumeral(10);
-// console.log(romanNumeral(967));
+console.log(romanNumeral(967));
 
-module.exports = romanNumeral;
+//module.exports = romanNumeral;
