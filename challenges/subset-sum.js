@@ -22,7 +22,7 @@ function subsetSum(array, target) {
   }
 
   min = min * -1;
-  // console.log(min);
+  console.log(min);
   // console.log(max);
 
   let sums = [];
@@ -50,6 +50,7 @@ function subsetSum(array, target) {
   }
 
   //console.log(sums);
+  console.log(sums);
   if(sums[target+min]) {
     return true;
   } else {
@@ -62,6 +63,7 @@ function tests() {
   console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)) // true, 3 + 12 + 5 + 12 = 32
   console.log(subsetSum([8, 2, 4, 12], 13)) // false
   console.log(subsetSum([8, -2, 1, -3], 6)) // true, 8 + 1 + (-3) = 6
+  console.log(subsetSum([-56, 3, 5, 17, 29, 13, -43, 2, 9, 9, 9, 10, 1 ], -25));
 }
 
 //tests();
