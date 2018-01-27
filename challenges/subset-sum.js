@@ -9,16 +9,10 @@
  */
 
 function subsetSum(array, target) {
-  let currentSubSum;
-  for (let i = 0, j = 1; i < array.length; i++) {
-    currentSubSum = array[i] + array[j];
-    while (currentSubSum !== target && j !== array.length - 1) {
-      currentSubSum += array[j];
-      if (currentSubSum === target) {
-        return true;
-      }
-      j++;
-    }
+  if (target === 0) { return true; }
+  if (array.length === 0) { return false; }
+  for (let i = 0; i < array.length; i++) {
+    if (subsetSum(array.slice(i + 1), target - array[i])) { return true; }
   }
   return false;
 }
