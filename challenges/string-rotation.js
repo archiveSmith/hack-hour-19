@@ -19,9 +19,7 @@ function stringRotation(s1, s2) {
   if (s1 === s2) return true;
   const first = s1[0];
   const index = s2.indexOf(first);
-  const back = s2.slice(0, index);
-  const front = s2.slice(index);
-  const compare = front + back;
+  const compare = s2.slice(0, index);
 
   return isSubString(s1, compare);
 }
