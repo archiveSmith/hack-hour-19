@@ -40,8 +40,8 @@ function stringRotation(s1, s2) {
   return true;
 
 }
-console.log(stringRotation("hello", "hello"));
-console.log(stringRotation("hello", "llohe"));
-console.log(stringRotation("hello", "he"));
-console.log(stringRotation("hello", "ollhe"));
+// console.log(stringRotation("hello", "hello"));
+// console.log(stringRotation("hello", "llohe"));
+// console.log(stringRotation("hello", "he"));
+// console.log(stringRotation("hello", "ollhe"));
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
