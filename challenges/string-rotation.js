@@ -17,6 +17,7 @@
 function stringRotation(s1, s2) {
   if (s1.length !== s2.length) return false;
   if (s1 === s2) return true;
+  if (s1 === s2.reverse()) return false;
   const first = s1[0];
   const index = s2.indexOf(first);
   const compare = s2.slice(0, index);
