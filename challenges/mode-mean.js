@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+  if (array.length===1) return true;
   const freqStore = {};
   array.forEach(function(element){
     if (!freqStore.hasOwnProperty(element)) {
