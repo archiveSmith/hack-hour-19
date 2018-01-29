@@ -14,9 +14,8 @@
 */
 
 function drawStairs(n) {
-  let str = '';
   for(let i=1; i<=n; i++){
-    // let str = '';
+    let str = '';
     for(let j=1; j<=n-i; j++){
       str = str.concat(' ');
     }
@@ -24,12 +23,8 @@ function drawStairs(n) {
       str = str.concat('*');
     }
     str.concat('\n')
-    // console.log(str);
+    console.log(str);
   }
-  console.log(str);
 }
-
-console.log(drawStairs(6));
-
 
 module.exports = drawStairs;
