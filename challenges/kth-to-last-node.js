@@ -33,6 +33,8 @@ function kthToLastNode(k, head) {
     //now count tells me the length of the list.
   }
 
+  if (k>count) return undefined;
+
   const steps = count - k;
   //steps tells me how many steps I need to go down the list.
 
@@ -40,7 +42,7 @@ function kthToLastNode(k, head) {
   for (let i=0; i<steps; i++){
     itr = itr.next;
   }
-  if (!itr) return undefined;
+  // if (!itr) return undefined;
   return itr.value;
 }
 
