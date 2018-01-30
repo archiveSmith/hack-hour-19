@@ -13,8 +13,27 @@
 
 */
 
-function drawStairs(n) {
+function astString(num, total) {
+    var string = [];
+    while(total > 0) {
+        string.push(' ');
+        total--;
+    }
+    while(num > 0) {
+        string[num -1] = "*";
+        num--;
+    }
+    return string.reverse().join('');
+}
 
+function drawStairs(n) {
+    var count = 1;
+    var str = "";
+    while (count <= n) {
+        str += astString(count, n) + '\n';
+        count += 1;
+    }
+    console.log(str);
 }
 
 
