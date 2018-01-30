@@ -11,7 +11,18 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
-}
+    if(str.length === 0) {return true}
+    let filtered = str.toUpperCase()
+                      .replace(/[\W'_']/g,' ')
+                      .split(' ')
+                      .filter(ele => ele !== '');
+    let arr = [];
+    for (let i = 0, j = filtered.length; i < filtered.length, j > 0; i+=1,j-=1) {
+      if (filtered[i] !== filtered[j]) {
+        arr.push(filtered[i]);
+      }  
+    }
+    return arr.length === 0;
+  }
 
 module.exports = matchWord;
