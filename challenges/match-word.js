@@ -16,9 +16,9 @@ function matchWord(str) {
   const wordStack = [];
   let top = -1;
   for (let i = 0; i < wordArray.length; i += 1) {
-    if (wordStack[top] !== wordArray[i].split('').reverse().join('')) {
+    if (wordStack[top] !== wordArray[i].split('').reverse().join('').toLowerCase()) {
       top += 1;
-      wordStack[top] = wordArray[i];
+      wordStack[top] = wordArray[i].toLowerCase();
     } else {
       top -= 1;
       wordStack.pop();
