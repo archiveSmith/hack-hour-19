@@ -15,9 +15,12 @@ function matchWord(str) {
 
   //USE A STACK?
   //replace special characters with spaces
+  let newStr = str.replace(/[^a-z]/gi, ' ');
 
-  let newStr = str.replace(/-/g, ' ').replace(/%/g, ' ').replace(/#/g, ' ').replace(/@/g, ' ').replace(/!/g, ' ').replace(/#/g, ' ').replace(/_/g, ' ');
+  //trim leading and trailing white spaces
   newStr = newStr.trim();
+
+  //split string at one or more spaces
   const separator = / +/;
   let strArray = newStr.split(separator);
 
