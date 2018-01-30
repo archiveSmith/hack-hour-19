@@ -33,6 +33,6 @@ function romanNumeral(n) {
     }
     return output.reduce((acc, val) => acc + val);
 }
-// console.log(romanNumeral('XVIX')) //24
+console.log(romanNumeral('IX')) //24
 
 module.exports = romanNumeral;
