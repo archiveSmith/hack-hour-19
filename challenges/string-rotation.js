@@ -16,24 +16,16 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-  let sub = s2;
-
-  let n = 0;
-
-  while (s1.indexOf(sub)===-1){
-    n++;
-    sub = sub.slice(1);
-  }
-
-  return s2.slice(n) + s2.slice(0,n) === s1;
+  if (s2.length !== s1.length) return false;
+  return isSubstring(s1+s1, s2);
 }
-
-
-
-
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
 
-  //go through s2 until you find the END of s1. is there a "last index of"? YES
-  //or just go through s2 until you find the beginning of s1.
-  //find the place in s2 where the end of s1 meets the beginning of s1
+// let sub = s2;
+// let n = 0;
+// while (s1.indexOf(sub)===-1){
+//   n++;
+//   sub = sub.slice(1);
+// }
+// return s2.slice(n) + s2.slice(0,n) === s1;
