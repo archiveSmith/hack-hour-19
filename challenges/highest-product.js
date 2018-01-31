@@ -3,18 +3,18 @@
  */
 
 function highestProduct(array) {
+  if (!Array.isArray(array)) {
+    return 0;
+  }
   let len = array.length;
   let arr = array.slice().sort(function(a, b) {
     return a-b;
   });
-  console.log(arr);
-  if (len < 4) {
+  //console.log(arr);
+  if (len < 3) {
     // can I assume 3 ints, if fewer should I just use all of them?, if empty should I return 1?
-    let product = 1;
-    for (a of arr) {
-      product *= a;
-    }
-    return product;
+    // turns out I should return 0
+    return 0;
   }
 
   let x = arr[0] * arr[1] * arr[len-1];
@@ -29,6 +29,8 @@ function tests() {
   console.log(highestProduct([-1, -2, -3, -4, -5, -6, -7, -8]));
   console.log(highestProduct([-1, -2, -3, -4, -5, -6, -7, 8]));
   console.log(highestProduct([-1, -2, -3, -4, -5, -6, 7, 8]));
+  console.log(highestProduct({a: 1, b: 2, c: 3, d: 4}));
+  console.log(highestProduct([-1, -2]));
 }
 
 //tests()
