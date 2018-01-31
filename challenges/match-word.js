@@ -5,19 +5,25 @@
 
 
 function matchWord(str) {
-  let output = [];
-  let arr = str.split('');
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].match(/[a-z]/gi)) {
-      output.push(arr[i]);    
+  const isMatch = (str1, str2) => str1 === str2;
+  if(!str) return true; // invalid input check
+  if (typeof str !== 'string') return false; // null/undefined string check 
+  const strSplit = str.split(/[^a-z]/i).filter(line => line !== ''); 
+
+  const output = [];
+  for (let i = 0; i < strSplit.length; i++) {
+    if (!output.length || !isMatch(strSplit[i].toLowerCase(), output[output.length - 1])) {
+      output.push(strSplit[i].toLowerCase().split('').reverse().join(''));
+    } else {
+      output.pop();
     }
   }
-  console.log(output);
+  return !output.length; 
 }
-matchWord('__END_DNE-----');//  -> true
-// matchWord('__ENDDNE__');//  -> false       (not separated by a space)
-// matchWord('IF()()fi[]');//  -> true        (should be case-insensitive)
-// matchWord('for__if__rof__fi');//  -> false     not properly closed. like ( [) ] 
-// matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');//  -> true
-// matchWord('');//  -> true
+console.log(matchWord('__END_DNE-----'));//  -> true
+console.log(matchWord('__ENDDNE__')); //  -> false       (not separated by a space)
+console.log(matchWord('IF()()fi[]'));//  -> true        (should be case-insensitive)
+console.log(matchWord('for__if__rof__fi'));//  -> false     not properly closed. like ( [) ] 
+console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw'));//  -> true
+console.log(matchWord(''));//  -> true
 module.exports = matchWord;
