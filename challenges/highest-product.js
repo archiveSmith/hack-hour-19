@@ -4,7 +4,7 @@
 
  // Permutations?
 function highestProduct(array) {
-  if (!array.length) return undefined;
+  if (!array.length) return 0;
   if (array.length === 1) return array[0];
   if (array.length === 2) return array[0] * array[1];
 
@@ -54,12 +54,12 @@ const arr5 = [-2, -4, -5, -6];
 const arr6 = [1, 2, 4, 5, -6];
 const arr7 = [0, 0, -4, 5, -6];
 const arr8 = [0, -1, -2, -3];
-// console.log('Test 1 Expect 60:', highestProduct(arr1));
-// console.log('Test 2 Expect 125:', highestProduct(arr2));
-// console.log('Test 3 Expect 150:', highestProduct(arr3));
-// console.log('Test 4 Expect 90:', highestProduct(arr4));
-// console.log('Test 5 Expect -40:', highestProduct(arr5));
-// console.log('Test 6 Expect 40:', highestProduct(arr6));
-// console.log('Test 7 Expect 120:', highestProduct(arr7));
-// console.log('Test 8 Expect 0:', highestProduct(arr7));
+console.log('Test 1 Expect 60:', highestProduct(arr1));
+console.log('Test 2 Expect 125:', highestProduct(arr2));
+console.log('Test 3 Expect 150:', highestProduct(arr3));
+console.log('Test 4 Expect 90:', highestProduct(arr4));
+console.log('Test 5 Expect -40:', highestProduct(arr5));
+console.log('Test 6 Expect 40:', highestProduct(arr6));
+console.log('Test 7 Expect 120:', highestProduct(arr7));
+console.log('Test 8 Expect 0:', highestProduct(arr7));
 module.exports = highestProduct;
