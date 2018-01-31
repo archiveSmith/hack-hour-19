@@ -3,11 +3,18 @@
  */
 
 function highestProduct(array) {
+    if (array.length < 3 || !Array.isArray(array)) {
+        return 0;
+    }
     let newArr = array.sort((a, b) => {
         return b - a
     })
-    return newArr[0] * newArr[1] * newArr[2];
+    let result = newArr[0] * newArr[1] * newArr[2];
+    if (result < 0) {
+        result = result * -1
+    }
+    return result;
 }
-console.log(highestProduct([4, 7, 1, 2]));
+console.log(highestProduct([-4, 2, 5, -7]));
 
 module.exports = highestProduct;
