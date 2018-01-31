@@ -24,8 +24,23 @@
  *
  */
 
-function balancedParens(input){
-
+function balancedParens(input) {
+  const tracker = [];
+  const match = {
+    '}': '{',
+    ']': '[',
+    ')': '('
+  }
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === '(' || input[i] === '{' || input[i] === '[') tracker.push(input[i]);
+    if (input[i] === ')' || input[i] === '}' || input [i] === ']') {
+      if (tracker[tracker.length - 1] === match[input[i]]) tracker.pop();
+      else return false;
+    } 
+   }
+  return tracker.length === 0;
 }
+
+console.log("hello");
 
 module.exports = balancedParens;
