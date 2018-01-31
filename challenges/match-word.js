@@ -11,6 +11,7 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+
     let newStr = str.toUpperCase().split('')
     let letters = /^[A-Za-z]+$/;
     let arr = [];
@@ -32,4 +33,9 @@ function matchWord(str) {
     console.log(arrRev);
 }
 console.log(matchWord('for__if__rof__fi'));
+
+
+
+
+
 module.exports = matchWord;
