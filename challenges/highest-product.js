@@ -3,8 +3,9 @@
  */
 
 function highestProduct(array) {
-  if (array.length<3) return undefined;
-  
+  if (array.length<3) return 0;
+  if (!Array.isArray(array)) return 0;
+
   //compare the products of the largest 2 positives and largest 2 negatives
   let posArray = array.slice();
   let bigPos1 = Math.max(...posArray);
