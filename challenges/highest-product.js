@@ -3,8 +3,12 @@
  */
 
 function highestProduct(array) {
-  var arr = array.sort();
-  return arr.slice(-3).reduce((a,b) => a*b,1);
+  if (array.length < 3 || !Array.isArray(array)) {
+    return 0;
+  } else {
+    var arr = array.sort().map(Math.abs);
+    return arr.slice(-3).reduce((a,b) => a*b,1);
+  }
 }
 
 
