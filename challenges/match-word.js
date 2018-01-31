@@ -18,7 +18,7 @@ function matchWord(str) {
   let newStr = str.replace(/[^a-z]/gi, ' ');
 
   //trim leading and trailing white spaces
-  newStr = newStr.trim();
+  newStr = newStr.trim().toLowerCase();
 
   //split string at one or more spaces
   const separator = / +/;
