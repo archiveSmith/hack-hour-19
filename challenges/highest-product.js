@@ -3,7 +3,13 @@
  */
 
 function highestProduct(array) {
-
+    if(!array.length) return false;
+    let sum = 1;
+    array.sort((a,b) => b > a);
+    array.forEach((num, i) => {
+        if (i < 3) sum *= num;
+    });
+    return sum;
 }
 
 
