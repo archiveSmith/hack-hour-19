@@ -7,5 +7,5 @@ function highestProduct(array) {
     return sorted[0] * sorted[1] * sorted[2];
 }
 // console.log(highestProduct([2,3,6,1]));``
-
+//as
 module.exports = highestProduct;
