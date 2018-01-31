@@ -3,14 +3,23 @@
  */
 
 function highestProduct(array) {
-  const highestNum = array
-    .sort((a, b) => {
-      return a - b;
-    })
-    .slice(-3);
+  if (array.length < 3) return false;
+
+  const highestNum = array.sort().slice(-3);
   return highestNum.reduce((x, y) => {
     return (x *= y);
   });
+
+  // const highestNum = array
+  //   .sort((a, b) => {
+  //     return a - b;
+  //   })
+  //   .slice(-3);
+  // return highestNum.reduce((x, y) => {
+  //   return (x *= y);
+  // });
 }
+
+console.log(highestProduct([-10, 6, 5, 4, 3, 2, 1]));
 
 module.exports = highestProduct;
