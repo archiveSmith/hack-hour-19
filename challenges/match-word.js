@@ -48,4 +48,6 @@ function matchWord(str) {
     : true;
 }
 
+console.log(matchWord(""));
+
 module.exports = matchWord;
