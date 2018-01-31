@@ -17,13 +17,12 @@ function highestProduct(array) {
   });
 
   // Get the product of the 3 largest numbers in array
-  for (let i = sortArr.length - 1; i > 0 && count < 3; i -= 1) {
+  for (let i = sortArr.length - 1; count < 3; i -= 1) {
     product *= sortArr[i];
     count += 1;
   }
 
   return product;
 }
-
 
 module.exports = highestProduct;
