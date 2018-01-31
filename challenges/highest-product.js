@@ -3,7 +3,11 @@
  */
 
 function highestProduct(array) {
-  let max = 0;
+  let max = -Infinity;
+
+  if (array.constructor !== Array || array.length < 3) {
+    return 0;
+  }
 
   for (let i = 0; i < array.length; i += 1) {
     const elementI = array[i];
