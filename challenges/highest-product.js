@@ -15,19 +15,11 @@ function highestProduct(array) {
       product *= a;
     }
     return product;
-  } else if (arr[len-1] >= 0) {
-    // gonna maximize absolute val
-    console.log('in here');
-    let low = arr[0] * arr[1];
-    console.log(low);
-    let high = arr[len-2] * arr[len-3];
-    console.log(high);
-    let mult = Math.max(low, high);
-    return arr[len-1] * mult;
-  } else {
-    // all neg, gonna minimize absolute value
-    return arr[len-1] * arr[len-2] * arr[len-3];
   }
+
+  let x = arr[0] * arr[1] * arr[len-1];
+  let y = arr[len-3] * arr[len-2] * arr[len-1];
+  return Math.max(x, y);
 }
 
 function tests() {
