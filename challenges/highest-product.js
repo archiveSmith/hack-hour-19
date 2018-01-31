@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) return false;
+  if (!Array.isArray(array) && array.length < 3) return 0;
 
   const highestNum = array.sort().slice(-3);
   return highestNum.reduce((x, y) => {
