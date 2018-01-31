@@ -15,14 +15,9 @@
  }
 
 function stringRotation(s1, s2) {
-  if (s1.length !== s2.length) return false;
-  if (s1 === s2) return true;
-  if (s1 === s2.reverse()) return false;
-  const first = s1[0];
-  const index = s2.indexOf(first);
-  const compare = s2.slice(0, index);
-
-  return isSubString(s1, compare);
+  // given solution
+  const doubleString = s1 + s1;
+  return isSubstring(doubleString, s2);
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
