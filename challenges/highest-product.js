@@ -1,9 +1,3 @@
-/**
- * Given an array of integers, find the highest product you can get from three of the integers.
- */
-
- // Permutations?
- 
 function highestProduct(array) {
   if (!array.length) return 0;
   if (array.length === 1) return array[0];
