@@ -7,27 +7,34 @@ function highestProduct(array) {
   if (!Array.isArray(array)) return 0;
 
   //compare the products of the largest 2 positives and largest 2 negatives
-  let posArray = array.slice();
-  let bigPos1 = Math.max(...posArray);
-  posArray.splice(posArray.indexOf(bigPos1), 1);
-  let bigPos2 = Math.max(...posArray);
-  posArray.splice(posArray.indexOf(bigPos2), 1);
-  let posProd = bigPos1 * bigPos2;
+  array.sort((a,b) => {return a-b});
+  const len = array.length;
+  let posProd = array[len-1] * array[len-2] *array[len-3];
+  let negProd = array[0] * array [1] * array[len-1];
+
+  return Math.max(posProd, negProd);
+
+  // let posArray = array.slice();
+  // let bigPos1 = Math.max(...posArray);
+  // posArray.splice(posArray.indexOf(bigPos1), 1);
+  // let bigPos2 = Math.max(...posArray);
+  // posArray.splice(posArray.indexOf(bigPos2), 1);
+  // let posProd = bigPos1 * bigPos2;
   
-  let negArray = array.slice();
-  let bigNeg1 = Math.min(...negArray);
-  negArray.splice(negArray.indexOf(bigNeg1), 1);
-  let bigNeg2 = Math.min(...negArray);
-  negArray.splice(negArray.indexOf(bigNeg2), 1);
-  let negProd = bigNeg1 * bigNeg2;
+  // let negArray = array.slice();
+  // let bigNeg1 = Math.min(...negArray);
+  // negArray.splice(negArray.indexOf(bigNeg1), 1);
+  // let bigNeg2 = Math.min(...negArray);
+  // negArray.splice(negArray.indexOf(bigNeg2), 1);
+  // let negProd = bigNeg1 * bigNeg2;
   
-  //if the product of negatives is bigger, multiply by the greatest number
-  //if the produce of positives is bigger, multiply by the third greatest number
-  if (negProd >= posProd){
-    return negProd * Math.max(...array);
-  } else {
-    return posProd * Math.max(...posArray);
-  }
+  // //if the product of negatives is bigger, multiply by the greatest number
+  // //if the produce of positives is bigger, multiply by the third greatest number
+  // if (negProd >= posProd){
+  //   return negProd * Math.max(...array);
+  // } else {
+  //   return posProd * Math.max(...posArray);
+  // }
 }
 
 module.exports = highestProduct;
