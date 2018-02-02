@@ -10,12 +10,19 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(currentl1 = l1, currentl2 = l2) {
+function zip(l1, l2) {
   // Check to see if a linkedlist is null
-  if(!l1 && !l2) return null;
-  if(!l1) return l2;
-  if(!l2) return l1;
+  if(l1 === null && l2 === null) return null;
+  if(l1 === null) return l2;
+  if(l2 === null) return l1;
 
+  // Set a reference to the head of l1
+  let head = l1;
+  
+  // Declare current node variables for each linked list
+  let currentl1 = l1;
+  let currentl2 = l2;
+  
   // Declare memory variables for each linked list
   let meml1;
   let meml2;
@@ -34,7 +41,7 @@ function zip(currentl1 = l1, currentl2 = l2) {
   }
 
   // Return the head of the first linked list
-  return l1;
+  return head;
 };
 
 module.exports = {Node: Node, zip: zip};
