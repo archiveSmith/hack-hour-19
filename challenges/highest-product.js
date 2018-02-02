@@ -7,6 +7,7 @@ function highestProduct (array) {
     function compareNums (a, b) {
         return a-b;
     }
+    
     let result = array.sort(compareNums).reverse();
     return (result[0]*result[1]*result[2]);
     
