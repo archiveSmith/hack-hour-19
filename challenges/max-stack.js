@@ -18,6 +18,7 @@ function Stack() {
   }
 
   Stack.prototype.pop = function () {
+    if(count === 0) {return undefined};
     let stored = this.storage[this.count];
     delete this.storage[this.count - 1];
     this.count--;
