@@ -55,17 +55,17 @@ function countIt(list){
 	return count;
 }
 
+//
+// let first = new Node(1);
+// first.next = new Node(2);
+// first.next.next = new Node(3);
+// first.next.next = new Node(4);
+//
+// let second = new Node(10);
+// second.next = new Node(20);
+// second.next.next = new Node(30);
+//
+// console.log(zip(first, second));
 
-let first = new Node(1);
-first.next = new Node(2);
-first.next.next = new Node(3);
-first.next.next = new Node(4);
 
-let second = new Node(10);
-second.next = new Node(20);
-second.next.next = new Node(30);
-
-console.log(zip(first, second));
-
-
-//module.exports = {Node: Node, zip: zip};
+module.exports = {Node: Node, zip: zip};
