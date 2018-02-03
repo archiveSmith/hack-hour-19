@@ -25,12 +25,11 @@ class Stack {
     const temp = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length -= 1;
-    this.MAX = Object.values(this.data).reduce((prev, cur) => (cur > prev) ? cur : prev);
+    this.MAX = Object.values(this.data).reduce((prev, cur) => (cur > prev) ? cur : prev, -Infinity);
     return temp;
   }
   getMax() {
-    return this.MAX;
+    return this.data.length === 0 ? undefined : this.MAX;
   }
 }
-
 module.exports = Stack;
