@@ -11,11 +11,14 @@ function Stack() {
   this.size = 0; 
   this.maxVal = 0; 
   this.getMax = function(){
+  	if(this.size===0){
+  		return undefined; 
+  	}
   	return this.maxVal; 
   };
   this.pop = function(){
   	if(this.size===0){
-  		return;
+  		return undefined; 
   	}
   	let lastVal = this.array[this.size]; 
   	delete this.array[this.size]; 
