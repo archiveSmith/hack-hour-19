@@ -23,6 +23,7 @@ function Stack() {
   	let lastVal = this.array[this.size]; 
   	delete this.array[this.size]; 
   	this.size--; 
+  	this.maxVal = 0; 
   	for(let key in this.array){
   		if(this.array[key]>this.maxVal){
   			this.maxVal = this.array[key]; 
