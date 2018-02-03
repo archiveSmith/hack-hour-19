@@ -7,7 +7,20 @@
  */
 
 function Stack() {
-  // body...
+  this.arr = {};
+  this.length = 0;
+
+  this.push = (el) => {
+    this.length++;
+    this.arr[this.length - 1] = el;
+  };
+
+  this.pop = () => {
+    this.length--;
+    const result = this.arr[this.length];
+    delete this.arr[this.length];
+    return result;
+  };
 }
 
 module.exports = Stack;
