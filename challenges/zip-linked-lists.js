@@ -5,25 +5,24 @@
  * BONUS: Do this in place
  */
 
-//CONSTRUCTOR FOR MY liiiiiiiiiist
+//CONSTRUCTOR - only necessary if you are making a new list
 function Node(val) {
   this.value = val;
   this.next = null;
 }
 
 function zip(l1, l2) {
-  //go to the end of list one
-  //link the end of list one to the end of list two
-  //do this forever
+  // Base Cases
+  if (!l1 && !l2) return undefined;
+  if (!l1) return l2;
+  if (!l2) return l1;
+  if (typeof l1 !== 'object' || typeof l2 !== 'object') return undefined;
 
-  //OR just build a new one.
-  let Head = new Node()//put the value of l1 head in here somehow);
-
-  //grab the values in l1 and put them in an array
-  let l1itr = l1.value;
-  //do the same with l2
-  //make my new list from the zipped arrays.
-
+  // Recursive solution: the next node on l1 should be the zipped version of l2 and l1.next;
+  l1.next = zip(l2, l1.next);
+  
+  // Once the recursion is done, the entire zipped list is contained in l1;
+  return l1;
 };
 
 module.exports = {Node: Node, zip: zip};
