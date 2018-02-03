@@ -19,7 +19,8 @@ function Stack() {
   }
 
   this.getMax = () => {
-    return Math.max(...items);
+    if(items.length < 1) return undefined;
+    else return Math.max(...items);
   }
 
 }
