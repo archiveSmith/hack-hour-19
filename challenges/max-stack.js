@@ -19,6 +19,7 @@ Stack.prototype.push = function (value) {
     this.index++
   }
   this.storage[this.index] = value;
+  return this.index++;
 };
 
 Stack.prototype.pop = function () {
