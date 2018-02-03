@@ -6,8 +6,23 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
-function Stack() {
-  // body...
+function Stack() { // LIFO
+  // body... 
+  this.storage = [];
+  this.push = function(val){
+    this.storage.push(val);
+    return this.storage.length;
+   }
+  this.pop = function() {
+    let index = this.storage.length - 1;
+    let removed = this.storage[index];
+    this.storage.splice(index,1);
+    return removed;
+   }
+  this.getMax = function() {
+    let max = Math.max.apply(null, this.storage);
+    return max;
+  }
 }
 
 module.exports = Stack;
