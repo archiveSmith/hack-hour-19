@@ -25,7 +25,7 @@ Stack.prototype.pop = function() {
   // Keep track of popped element
   let elem = this.body[this.length - 1];
   // Delete last element in body and update length
-  delete this.body[this.length-- - 1];
+  delete this.body[(this.length--) - 1];
   // Return the popped element
   return elem;
 }
