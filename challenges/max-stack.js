@@ -32,7 +32,7 @@ function Stack() {
     return popped;
   };
   this.getMax = function() { // runs in O(n) time for now
-    if (this.len === 0) return null;
+    if (this.len === 0) return undefined;
     let curr = this.head;
     let max = this.head.val;
     while (curr) {
@@ -45,10 +45,11 @@ function Stack() {
 
 function tests() {
   let x = new Stack();
+  x.push(10);
   for (let i = 1; i < 11; i ++) {
-    console.log('length is', x.push(12-i));
+    console.log('length is', x.push(i));
   }
-  for (let i = 1; i < 11; i ++) {
+  for (let i = 1; i <= 11; i ++) {
     console.log('just popped', x.pop());
     console.log('new length is', x.len)
     console.log('current max is', x.getMax());
