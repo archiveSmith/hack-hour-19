@@ -8,6 +8,26 @@
 
 function Stack() {
   // body...
+  this.storage = {};
+  this.count = 0;
+
+  Stack.prototype.push = function(value) {
+    this.storage[this.count] = value;
+    this.count++;
+    return count;
+  }
+
+  Stack.prototype.pop = function () {
+    let stored = this.storage[this.count];
+    delete this.storage[this.count - 1];
+    this.count--;
+    return stored;
+  }
+
+  Stack.prototype.getMax = function () {
+    let keys = Object.keys(this.storage).sort((b,a) => b - a);
+    return keys[0];
+  }
 }
 
 module.exports = Stack;
