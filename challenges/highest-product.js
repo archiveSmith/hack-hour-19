@@ -3,6 +3,12 @@
  */
 
 function highestProduct(array) {
+	if(typeof array != "object"){
+		return 0;
+	}
+	if(array.length < 3){
+		return 0;
+	}
 	console.log('array', array);
 	let largestThree = [];
 
@@ -31,7 +37,11 @@ function highestProduct(array) {
 		largestThree = [];
 		for(let i = 0; i < sorted.length; i++) {
 			if(sorted[i][1] === 'pos' && largestThree.length <= 3) {
-				largestThree.push(sorted[i][0]);
+				if(sorted[i][0]=== 'neg'){
+					largestThree.push(sorted[i][0] * -1);
+				} else {
+					largestThree.push(sorted[i][0]);
+				}
 			}
 		}
 		return largestThree[0] * largestThree[1] * largestThree[2];
@@ -39,6 +49,6 @@ function highestProduct(array) {
 
 }
 
-console.log(highestProduct([2, -2, -3, -6]));
+console.log(highestProduct([-2,10, 5, -3]));
 
 //module.exports = highestProduct;
