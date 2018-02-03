@@ -22,10 +22,15 @@ class Stack {
     return this.length;
   }
   pop() {
+    if (this.length === 0) return undefined;
     const temp = this.data[this.length - 1];
     delete this.data[this.length - 1];
     this.length -= 1;
-    this.MAX = Object.values(this.data).reduce((prev, cur) => (cur > prev) ? cur : prev, -Infinity);
+    if (this.MAX === temp) {
+      this.MAX = Object
+        .values(this.data)
+        .reduce((prev, cur) => (cur > prev ? cur : prev), -Infinity);
+    }
     return temp;
   }
   getMax() {
