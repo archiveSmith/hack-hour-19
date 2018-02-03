@@ -22,7 +22,7 @@ function zip(l1, l2) {
   // Declare current node variables for each linked list
   let currentl1 = l1;
   let currentl2 = l2;
-  
+
   // Declare memory variables for each linked list
   let meml1;
   let meml2;
@@ -43,5 +43,15 @@ function zip(l1, l2) {
   // Return the head of the first linked list
   return head;
 };
+
+let list1 = new Node(1);
+list1.next = new Node(3);
+list1.next.next = new Node(5);
+
+let list2 = new Node(2);
+list2.next = new Node(4);
+list2.next.next = new Node(6);
+
+console.log(JSON.stringify(zip(list1, list2), null, 2));
 
 module.exports = {Node: Node, zip: zip};
