@@ -12,8 +12,13 @@ function Stack() {
 }
 
 Stack.prototype.push = function (value) {
+  // this.storage[this.index] = value;
+  // return this.index++
+  let current = this.storage[this.index]
+  while (current !== undefined) {
+    this.index++
+  }
   this.storage[this.index] = value;
-  return this.index++
 };
 
 Stack.prototype.pop = function () {
