@@ -19,14 +19,14 @@ function Stack() {
   };
 
   Stack.prototype.pop = () => {
-    if (this.top === 0) return null;
+    if (this.top === 0) return;
     const val = this.stack[this.top - 1];
     this.top -= 1;
     return val;
   };
 
   Stack.prototype.getMax = () => {
-    if (this.top === 0) return null;
+    if (this.top === 0) return;
     return this.max;
   };
 }
