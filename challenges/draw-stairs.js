@@ -22,4 +22,4 @@ function drawStairs(n) {
 }
 
 
-// module.exports = drawStairs;
+module.exports = drawStairs;

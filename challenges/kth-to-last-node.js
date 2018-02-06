@@ -31,20 +31,20 @@
 function Node(val) {
   this.value = val;
   this.next = null;
-  this.alphabet.push(val);
+  this.fancy.push(val);
 }
 
 function kthToLastNode(k, head) {
-  let alphabet;
-  //insert alphabet array with all letters
+  let fancy;
+  //insert fancy array with all letters
   //from a-z lowerCase only
-for(i=97,alphabet='';i<123;)alphabet+=String.fromCharCode(i++)
-  //the idea was to go backwards through the alphabet
-  for(var i = alphabet.length; i>0; i--) {
-    if(alphabet[i]) {console.log(i)}
+for(i=97,fancy='';i<123;)fancy+=String.fromCharCode(i++)
+  //the idea was to go backwards through the fancy
+  for(var i = fancy.length; i>0; i--) {
+    if(fancy[i]) {console.log(i)}
   }
   //if we don't have a node with a value.toLowerCase
-  //then pop off that letter from the alphabet
+  //then pop off that letter from the fancy
   //then we could work backwards k times
   //to find the answer..
   //feels a bit hackey but the other solution
