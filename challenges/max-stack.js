@@ -37,6 +37,7 @@ Stack.prototype.pop = function() {
 }
 
 Stack.prototype.getMax = function() {
+  if (this.len === 0) return undefined;
   let valArray = Object.values(this.contents);
   return Math.max(...valArray);
 }
