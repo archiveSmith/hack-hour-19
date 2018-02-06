@@ -13,7 +13,22 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
-}
+    let profitArray = [];
+    
+    if (!Array.isArray(stock_prices_yesterday)) {return 'input is invalid'};
+    
+    while(stock_prices_yesterday.length > 1) {
+      let currentBuyingPrice = stock_prices_yesterday[0];
+      stock_prices_yesterday.shift();
+      let highestSellingPrice = stock_prices_yesterday.reduce((acc, ele) => {
+        return Math.max(acc, ele);
+      });
+      profitArray.push(highestSellingPrice - currentBuyingPrice);
+    }
+    let highestProfit = profitArray.reduce((acc, ele) => {
+      return Math.max(acc, ele);
+    });
+    return highestProfit > 0 ? highestProfit : 'no profit possible';
+  }
 
 module.exports = bestProfit;
