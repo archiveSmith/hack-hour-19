@@ -13,7 +13,31 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    let array = stock_prices_yesterday,
+        length = stock_prices_yesterday.length,
+        buyPrice = 0,
+        sellPrice = 0,
+        profit = 0;
 
+    if (!Array.isArray(stock_prices_yesterday)) return 0;
+    if (stock_prices_yesterday < 2) return 0;
+
+    for (let i = 0; i < length; index++) {
+        if (buyPrice === 0) {
+            buyPrice = array[i];
+        } 
+        else if (array[i+1] - array[i] > profit) {
+            buyPrice = array[i];
+            sellPrice = array[i+1];
+            profit = array[i+1] - array[i];
+        }
+        else if (array[i] > sellPrice) {
+            sellPrice = array[i];
+            profit = sellPrice - buyPrice;
+        }    
+    }
+
+    return profit;
 }
 
 module.exports = bestProfit;
