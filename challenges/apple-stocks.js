@@ -13,7 +13,21 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+    let max = -Infinity;
+    let currentProfit = 0;
+    
+    if (stock_prices_yesterday.length === 0) {return 0;}
+    
+    for (let i = 0; i < stock_prices_yesterday.length; i += 1) {
+      
+      if (typeof(stock_prices_yesterday[i]) !== 'number') {return 0;}
+    
+      currentProfit = stock_prices_yesterday[i+1] - stock_prices_yesterday[i];
+      
+      if ((stock_prices_yesterday[i+1] - stock_prices_yesterday[i]) > max) {max = currentProfit;}
+      if (max <= 0) {return 0;}
+    }
+    return max;
 }
 
 module.exports = bestProfit;
