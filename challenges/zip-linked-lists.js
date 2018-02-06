@@ -11,6 +11,7 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+<<<<<<< HEAD
   if (l1[0] !== null && l2[0] !== null) {
     let current1 = l1[0];
     let current2 = l2[0];
@@ -25,3 +26,8 @@ function zip(l1, l2) {
 };
 
 module.exports = { Node: Node, zip: zip };
+=======
+};
+
+module.exports = {Node: Node, zip: zip};
+>>>>>>> 7aaf7015ff4c20a0122e15e2a41d5efa2a5c227c

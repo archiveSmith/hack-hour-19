@@ -7,6 +7,7 @@
  */
 
 function Stack() {
+
   this.storage = {};
   this.index = 0;
 }
@@ -32,6 +33,9 @@ Stack.prototype.getMax = function () {
   this.storage = Array.from(this.storage);
   let result = this.storage.sort((a, b) => a - b);
   return result[this.index - 1];
+
+  // body...
+
 }
 
 module.exports = Stack;
