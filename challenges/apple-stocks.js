@@ -12,8 +12,42 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+function bestProfit(stockPrices) {
+  if (!Array.isArray(stockPrices)) return 0;
+  if (stockPrices.length === 0) return 0;
 
+  // only want to look until midnight
+  let max = 30 + (60 * 14);
+  //console.log(max);
+
+  let len = Math.min(max, stockPrices.length);
+
+  let lowestPrice = stockPrices[0];
+  let profit = 0;
+  for (let i = 0; i < len; i ++) {
+    if (typeof stockPrices[i] !== 'number') return 0;
+    let diff = stockPrices[i] - lowestPrice;
+    if (diff > profit) profit = diff;
+    if (stockPrices[i] < lowestPrice) lowestPrice = stockPrices[i];
+  }
+  return profit;
 }
+
+function tests(){
+  let x = 'string';
+  console.log(bestProfit(x));
+  x = [];
+  console.log(bestProfit(x));
+  x = [11, 7, 4, 9, 'wrong', 10, 20];
+  console.log(bestProfit(x));
+  x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  console.log(bestProfit(x));
+  x = [10, 9, 8, 7, 6, 5, 4];
+  console.log(bestProfit(x));
+  x = [10, 9, 11, 7, 6, 18, 4];
+  console.log(bestProfit(x));
+}
+
+//tests();
 
 module.exports = bestProfit;
