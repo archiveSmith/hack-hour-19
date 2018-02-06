@@ -12,7 +12,22 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
+ // 
+
 function bestProfit(stock_prices_yesterday) {
+  let minValue = stock_prices_yesterday.shift();
+  let maxProfit = 0;
+
+  for(let i = 0; i < stock_prices_yesterday.length; i++) {
+    let stock = stock_prices_yesterday[i];
+    if(stock < minValue) minValue = stock;
+    if(stock > minValue) {
+      if(stock - minValue > maxProfit) {
+        maxProfit = stock - minValue;
+      }
+    }
+    return maxProfit;
+  }
 
 }
 
