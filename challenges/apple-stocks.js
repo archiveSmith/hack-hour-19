@@ -14,7 +14,7 @@
 
 function bestProfit(stock_prices_yesterday) {
 
-	
+
 	function findMaxPrice(stockArr){
 		let currentMax = stockArr[0];
 		for(let i=1; i<stockArr.length; i++){
@@ -34,13 +34,17 @@ function bestProfit(stock_prices_yesterday) {
 		return currentMin; 
 	}
 
+	if((stock_prices_yesterday.length <=1) || (Array.isArray(stock_prices_yesterday))){
+		return 0;
+	}
+
 	let maxPrice = findMaxPrice(stock_prices_yesterday); 
 	let minPrice = findMinPrice(stock_prices_yesterday); 
 
+	// if(maxPrice-minPrice <= 0){
+	// 	return 0; 
+	// }
 
-	if((maxPrice-minPrice <= 0) || (stock_prices_yesterday.length <= 0)){
-		return 0; 
-	}
 	return maxPrice-minPrice; 
 }
 
