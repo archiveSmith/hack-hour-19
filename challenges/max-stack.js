@@ -9,6 +9,29 @@
 function Stack() {
   this.store = {};
   this.length = 0;
+
+  // this.pop = () => {
+  //   if (this.length === 0) return undefined;
+  //   let lastItem = this.store[this.length - 1];
+  //   delete this.store[this.length - 1];
+  //   return lastItem;
+  // };
+
+  // this.push = value => {
+  //   this.store[this.length] = value;
+  //   this.length += 1;
+  //   return this.length;
+  // };
+
+  // this.getMax = () => {
+  //   let maxNum = this.store[0];
+  //   for (const key in this.store) {
+  //     if (this.store[key] > maxNum) {
+  //       maxNum = this.store[key];
+  //     }
+  //   }
+  //   return maxNum;
+  // };
 }
 
 Stack.prototype.pop = function() {
@@ -35,11 +58,12 @@ Stack.prototype.getMax = function() {
   return maxNum;
 };
 
-// const stack = new Stack();
-// stack.push(1);
-// stack.push(12);
-// stack.push(14);
-// stack.push(19);
-// console.log(JSON.stringify(stack.getMax(), null, 2));
+const stack = new Stack();
+stack.push(1);
+stack.push(12);
+stack.push(14);
+stack.push(19);
+stack.getMax();
+console.log(JSON.stringify(stack.getMax(), null, 2));
 
 module.exports = Stack;
