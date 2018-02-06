@@ -14,6 +14,34 @@
 
 function bestProfit(stock_prices_yesterday) {
 
+	
+	function findMaxPrice(stockArr){
+		let currentMax = stockArr[0];
+		for(let i=1; i<stockArr.length; i++){
+			if(stockArr[i]>currentMax){
+				return stockArr[i];
+			}
+		}
+		return currentMax; 
+	};
+	function findMinPrice(stockArr){
+		let currentMin = stockArr[0];
+		for(let i=1; i<stockArr.length; i++){
+			if(stockArr<currentMin){
+				return stockArr[i];
+			}
+		}
+		return currentMin; 
+	}
+
+	let maxPrice = findMaxPrice(stock_prices_yesterday); 
+	let minPrice = findMinPrice(stock_prices_yesterday); 
+
+
+	if((maxPrice-minPrice <= 0) || (stock_prices_yesterday.length <= 0)){
+		return 0; 
+	}
+	return maxPrice-minPrice; 
 }
 
 module.exports = bestProfit;
