@@ -12,8 +12,17 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+function max(val,stock_prices){
+  return stock_prices.reduce((acc,cur)=> (cur > val && cur > acc) ? cur-val : acc, 0);
+}
 
+function bestProfit(stock_prices_yesterday) {
+  return stock_prices_yesterday.reduce((acc,cur,i)=>{
+    let max_profit = max(cur,stock_prices_yesterday.slice(i))
+    return max_profit > acc ? max_profit : acc ;
+  },0);
 }
 
 module.exports = bestProfit;
+
+
