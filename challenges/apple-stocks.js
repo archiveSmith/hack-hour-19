@@ -11,9 +11,20 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
-
+// Best profit is the biggest difference between two prices at time t2 and t1, where t2 > t1
 function bestProfit(stock_prices_yesterday) {
-
+  if (!stock_prices_yesterday || !Array.isArray(stock_prices_yesterday))
+    return 0;
+  let maxProfit = 0,
+    smallest = stock_prices_yesterday[0];
+  for (let i = 1; i < stock_prices_yesterday.length; i++) {
+    console.log('Index', i, 'Price', stock_prices_yesterday[i]);
+    if (stock_prices_yesterday[i] < smallest)
+      smallest = stock_prices_yesterday[i];
+    if (stock_prices_yesterday[i] - smallest > maxProfit)
+      maxProfit = stock_prices_yesterday[i] - smallest;
+  }
+  return maxProfit;
 }
 
 module.exports = bestProfit;
