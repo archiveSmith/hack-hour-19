@@ -14,7 +14,17 @@
  */
 
 function binToDec(binary) {
+  var arrExp = createExponents(binary.split('').length);
+
 
 }
+
+function createExponents (num, arr = []) {
+  if (num === 0) return arr;
+  console.log(num)
+}
+}
+
+//FAIL!
 
 module.exports = binToDec;
