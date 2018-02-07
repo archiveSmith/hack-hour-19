@@ -21,7 +21,7 @@ function swap(array, i, j) {
   
 function mergeArrays(arr1, arr2) {
   
-  let merged = my_array.concat(another_array);
+  let merged = arr1.concat(arr2);
   
   for (let i = 0; i < merged.length; i += 1) {
     for (let j = 1; j < merged.length; j += 1) {
