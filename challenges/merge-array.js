@@ -43,6 +43,4 @@ function test() {
 var my_array = [3,4,6,10,11,15,21];
 var another_array = [1,5,8,12,14,19];
 
-test();
-
 module.exports = mergeArrays;
