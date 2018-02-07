@@ -26,7 +26,8 @@ Stack.prototype.getMax = function(){
   // Create Array that tracks largest value in Stack
       this.array.forEach(val => {
         let storage = val
-        if(this.array(val) > storage){
+        if(this.array(val) > storage);
+      });
 }
 
 module.exports = Stack;
