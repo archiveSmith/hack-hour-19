@@ -5,6 +5,12 @@
  * BONUS: Do this in place
  */
 
+let process = require('process');
+let os = require('os');
+let time = process.hrtime();
+let cpuInfo = os.cpus();
+console.log(process.hrtime());
+
 function Node(val) {
   this.value = val;
   this.next = null;
@@ -52,6 +58,6 @@ let list2 = new Node(2);
 list2.next = new Node(4);
 list2.next.next = new Node(6);
 
-console.log(JSON.stringify(zip(list1, list2), null, 2));
+console.log(zip(list1, list2));
 
 module.exports = {Node: Node, zip: zip};
