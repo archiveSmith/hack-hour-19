@@ -13,8 +13,24 @@
  *
  */
 
+function swap(array, i, j) {
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp;
+}
+  
 function mergeArrays(arr1, arr2) {
-
+  
+  let merged = my_array.concat(another_array);
+  
+  for (let i = 0; i < merged.length; i += 1) {
+    for (let j = 1; j < merged.length; j += 1) {
+      if (merged[j-1] > merged[j]) {
+        swap(merged, j-1, j);
+      }
+    }
+  }
+  return merged;
 }
 
 module.exports = mergeArrays;
