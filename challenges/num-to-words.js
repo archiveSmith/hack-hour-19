@@ -13,7 +13,28 @@
  */
 
 function numToWords(num) {
-
-}
+    const num100 = ['Hundred','Thousand','Million','Billion','Trillion'];
+    const num20 = [ 'Twenty','Thirty','Fourty','Fifty','Sixty','Seventy','Eighty','Ninety' ];
+    const num11 = ['Eleven','Twelve','Thirteen', 'Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+    const num1 = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten' ];
+    const splitNumber = num.toString().split('').map(ele => parseInt(ele));
+    const rejoinNum = parseInt(splitNumber.join(''))
+    let arr = [];
+      while (splitNumber.length > 0) {
+        arr.push(num1[splitNumber[0]])
+        if (rejoinNum >= 100) {
+          arr.push(num100[splitNumber.length - 3]);
+          splitNumber.shift();
+        } else if (rejoinNum > 19  && rejoinNum < 100) {
+          arr.pop();
+          arr.push(num20[splitNumber[0]]);
+          splitNumber.shift();
+        }
+      }  
+      return arr;
+    }
+    
+    console.log(numToWords(9996))
+    
 
 module.exports = numToWords;
