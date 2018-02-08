@@ -27,13 +27,13 @@ function bestProfit(stock_prices_yesterday) {
   if(sorted[0] < 0){
     return 0;
   }
-  if(sorted[1] < 0){
-    return sorted[0] + sorted[1];
+  if(sorted[sorted.length-1] < 0){
+    return sorted[0] + sorted[sorted.length-1];
   }
-  return sorted[0] - sorted[1];
+  return sorted[0] - sorted[sorted.length-1];
 
 
 }
 
-console.log(bestProfit([4,-3,-4,-1,-3]));
+console.log(bestProfit([3,-3,-4,-1,-3]));
 module.exports = bestProfit;
