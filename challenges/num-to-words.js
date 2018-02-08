@@ -12,6 +12,34 @@
  * numToWords(92120000000000000) -> 'NintyTwoQuadrillionOneHundredTwentyTrillion'
  */
 
+
+let oneToNineteen = [
+    "one", "two", "three", "four", "five",
+    "six", "seven", "eight", "nine", "ten",
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+    "sixteen", "seventeen", "eighteen", "nineteen"
+  ];
+  
+  let tens = [
+    "ten", "twenty", "thirty", "forty", "fifty",
+    "sixty", "seventy", "eighty", "ninety"
+  ];
+  
+  let scales = ["thousand", "million", "billion", "trillion"];
+  
+  function chunkUpNums(number) {
+    thousands = [];
+  
+    while(number > 0) {
+      thousands.push(number % 1000);
+      number = Math.floor(number / 1000);
+    }
+  
+    return thousands.reverse();
+  }
+  
+  // console.log(chunkUpNums(1000))
+
 function numToWords(num) {
 
 }
