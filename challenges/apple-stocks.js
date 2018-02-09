@@ -12,6 +12,12 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
+
+/* 
+  Below is my 2x nested forLoop solution. I know it's inefficient so I asked Max afterwards and he set me straight.
+  If you just keep track of the lowest price you find, you never need to loop through more than once.
+  I'll come back to coding this out some day later. someday.
+*/
  function bestProfit(stock_prices_yesterday) {
    //this var will hold all of our subtractions from all possible permutations
    let permSubArr = [];
