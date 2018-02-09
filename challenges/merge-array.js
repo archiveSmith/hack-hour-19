@@ -14,26 +14,28 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
-  let i = 0;
-  let j = 0;
-  console.log(i);
-  console.log(arr1.length);
-  let merged = [];
-  while(i < arr1.length) {
-    console.log(arr1[i]);
-      // if(arr1[i] === undefined){
-      //   merged.push(arr2.slice(j));
-      // }
-      // if(arr1[i] > arr2[j]){
-      //   merged.push(arr[i]);
-      //   i++;
-      // } else {
-      //   merged.push(arr2[j]);
-      //   j++;
-      // }
-  }
-  return merged;
+  let merge = arr1.concat(arr2);
+  let sorted = merge.sort((a,b) => a-b):
+  return sorted;
+  // let i = 0;
+  // let j = 0;
+  // console.log(i);
+  // console.log(arr1.length);
+  // let merged = [];
+  // while(i < arr1.length) {
+  //   conole.log(arr1[i]);
+  //     // if(arr1[i] === undefined){
+  //     //   merged.push(arr2.slice(j));
+  //     // }
+  //     // if(arr1[i] > arr2[j]){
+  //     //   merged.push(arr[i]);
+  //     //   i++;
+  //     // } else {
+  //     //   merged.push(arr2[j]);
+  //     //   j++;
+  //     // }
+  // }
+  // return merged;
 }
 
 console.log(mergeArrays([0,2,4],[1,3,4]));
