@@ -24,7 +24,7 @@ function permPalin(str) {
     if (obj[prop] % 2 !== 0) odd++;
   }
 
-  return odd > 1;
+  return odd === 1 || odd === 0;
 }
 
 module.exports = permPalin;
