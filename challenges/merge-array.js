@@ -29,6 +29,7 @@ function mergeArrays(arr1, arr2) {
     // Push the smaller of the elements into arr3
     arr1[i] <= arr2[j] ? arr3.push(arr1[i++]) : arr3.push(arr2[j++])
   }
+
   // Concant arr3 with the remainder of arr1 and arr2, one of which will be empty
   return arr3.concat(arr1.slice(i), arr2.slice(j));
 }
