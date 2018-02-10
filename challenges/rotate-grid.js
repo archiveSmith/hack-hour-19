@@ -12,12 +12,22 @@
  *                  sampleGrid after:   [   [7, 4, 1],
  *                                          [8, 5, 2],
  *                                          [9, 6, 3]  ]
- *
- * BONUS: Do this in place
+ * 
  */
 
 function rotateGrid(grid, n) {
-
+  const output = [];
+  for (let i = 0; i < n; i += 1) { output.push([]); }
+  for (let i = n - 1; i >= 0; i -= 1) {
+    const gridRow = grid[i];
+    for (let j = 0; j < n; j += 1) {
+      output[j].push(gridRow[j]);
+    }
+  }
+  return output;
 }
+
+// const grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// console.log(rotateGrid(grid, 3));
 
 module.exports = rotateGrid;
