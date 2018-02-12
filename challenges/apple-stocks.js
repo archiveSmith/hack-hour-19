@@ -27,7 +27,7 @@ function bestProfit(stock_prices_yesterday) {
       }
     }
     return maxProfit;
-  }
+  }localStorage
 
 }
 
