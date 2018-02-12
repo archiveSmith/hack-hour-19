@@ -13,6 +13,7 @@
  */
 
 function numToWords(num) {
+<<<<<<< HEAD
     let zeroTo19 = [
         'zero', 'one', 'two', 'three', 'four',
         'five', 'six', 'seven', 'eight', 'nine',
@@ -40,5 +41,9 @@ function numToWords(num) {
     return result
 }
 console.log(numToWords(13))
+=======
+
+}
+>>>>>>> 57b5518db5c6cec4fcf88cde443e276cf9f42271
 
 module.exports = numToWords;

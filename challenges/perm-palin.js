@@ -10,6 +10,7 @@
  */
 
 function permPalin(str) {
+<<<<<<< HEAD
     let strArr = str.split('');
     let strArrReverse = str.split('').reverse();
     let result = [];
@@ -32,5 +33,9 @@ function permPalin(str) {
     }
 }
 console.log(permPalin('cbac'))
+=======
+	
+}
+>>>>>>> 57b5518db5c6cec4fcf88cde443e276cf9f42271
 
 module.exports = permPalin;
