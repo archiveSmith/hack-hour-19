@@ -10,7 +10,13 @@
  */
 
 function permPalin(str) {
-	
+	checkForPalindDrome(permutation){
+
+	}
+	let strArr = str.split("");
+	for(let i=0; i<strArr.length; i++){
+		
+	}
 }
 
 module.exports = permPalin;
