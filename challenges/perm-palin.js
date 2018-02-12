@@ -31,5 +31,5 @@ function permPalin(str) {
 	return false;
 
 }
-console.log(permPalin('a'));
+console.log(permPalin('edcba'));
 module.exports = permPalin;
