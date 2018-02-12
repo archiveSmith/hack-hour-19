@@ -7,7 +7,7 @@
       "node": true,
       "browser": true,
       "es6": true
-      }
+      },
     "rules": {
         "semi": 2,
         "no-undef": "error"

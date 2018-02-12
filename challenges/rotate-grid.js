@@ -17,7 +17,14 @@
  */
 
 function rotateGrid(grid, n) {
+    
+    if (n === 1) return grid;
+    else (
 
+        
+
+        return rotateGrid(grid, n - 1);
+    )
 }
 
 module.exports = rotateGrid;
