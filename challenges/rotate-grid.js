@@ -20,6 +20,44 @@ function rotateGrid(grid, n) {
 
   if(typeof n !== 'number' || !Array.isArray(grid)) return;
 
+  let c = n-1;
+  let r = Math.floor(n/2);
+
+  let r1 = 0;
+  let c1 = 0;
+
+  for (let row = r1; row < r; row ++) {
+    for (let column = c1; column < c; column ++) {
+      // first grid[row][column] to grid[column][n-1-row]
+      // then grid[column][n-1-row] to grid[n-1-row][n-1-column]
+      // then grid[n-1-row][n-1-column] to grid[n-1-row][column]
+      // let temp = grid[row][column];
+      // grid[row][column] = grid[n-1-row][column];
+      // grid[n-1-row][column] = grid[n-1-row][n-1-column];
+      // grid[n-1-row][n-1-column] = grid[column][n-1-row];
+      // grid[column][n-1-row] = temp
+
+      let temp = grid[row][column];
+      grid[row][column] = grid[n-1-column][row];
+      grid[n-1-column][row] = grid[n-1-row][n-1-column];
+      grid[n-1-row][n-1-column] = grid[column][n-1-row];
+      grid[column][n-1-row] = temp
+    }
+    c1 ++;
+    c --;
+  }
+  return grid;
+}
+
+function tests(){
+  let grid =   [ [1, 2, 3], [4, 5, 6], [7, 8, 9]  ];
+  console.log(rotateGrid(grid, 3));
+};
+
+function rotateGrid2(grid, n) {
+
+  if(typeof n !== 'number' || !Array.isArray(grid)) return;
+
   let newGrid = [];
   for (let i = 0; i < n; i ++) {
     newGrid.push([]);
@@ -36,6 +74,9 @@ function rotateGrid(grid, n) {
 function tests(){
   let grid =   [ [1, 2, 3], [4, 5, 6], [7, 8, 9]  ];
   console.log(rotateGrid(grid, 3));
+  grid =   [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16] ];
+  console.log(grid);
+  console.log(rotateGrid(grid, 4));
 };
 
 //tests();
