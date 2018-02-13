@@ -8,7 +8,15 @@
  */
 
 function gcd(a, b) {
-
+  let max = Math.max(a,b);
+  let greatest = [];
+  for(var i = 2; i <= max; i++ ){
+    if(a % i == 0 && b % i == 0){
+      greatest.push(i);
+    }
+  }
+  return Math.max(...greatest);
 }
 
+// console.log(gcd(44,8));
 module.exports = gcd;

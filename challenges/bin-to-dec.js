@@ -14,7 +14,19 @@
  */
 
 function binToDec(binary) {
-
+  let binNum = [8,4,2,1];
+  let start = binNum.slice(-binary.length);
+  let sum = 0;
+  for(var i = 0; i < binary.length; i++){
+    let curBin = binary[i];
+    if(curBin === '0'){
+      continue;
+    } else {
+      sum += start[i];
+    }
+  }
+  return sum;
 }
+console.log(binToDec('11'));
 
 module.exports = binToDec;
