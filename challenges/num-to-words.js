@@ -13,7 +13,37 @@
  */
 
 function numToWords(num) {
+<<<<<<< HEAD
+    let zeroTo19 = [
+        'zero', 'one', 'two', 'three', 'four',
+        'five', 'six', 'seven', 'eight', 'nine',
+        'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
+        'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+    ];
+    let twentyTo90 = [
+        " ", " ", 'twenty', 'thirty', 'forty',
+        'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+    ];
+    let hunderedToX = [
+        'hundered', 'thousand', 'million', 'billion', 'trillion', 'quadrillion',
+        'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion'
+    ];
+    let result;
+    let numArr = Array.from(num.toString()).map(element => {
+        return Number(element)
+    })
+    console.log(numStr)
+    if (numArr.length <= 2 && num < 20) {
+        result = zeroTo19[num];
+    } else if (numArr.length === 2 && num >= 20) {
+
+    }
+    return result
+}
+console.log(numToWords(13))
+=======
 
 }
+>>>>>>> 57b5518db5c6cec4fcf88cde443e276cf9f42271
 
 module.exports = numToWords;
