@@ -2,15 +2,10 @@
  * Create a stack.Then create a queue using two stacks.
  */
 
-
 function Stack() {
     this.top = null;
     this.length = 0;
 }
-
-Stack.prototype.getLength = () => {
-    return this.length;
-};
 
 Stack.prototype.pop = () => {
     if(this.length === 0) return undefined;
@@ -29,14 +24,13 @@ Stack.prototype.push = (val) => {
       newNode.prev = this.top;
       this.top = newNode;
     }
-    this.length++;
+    this.length += 1;
     return this.length;
 };
 
 /**
 * Queue Class
 */
-
 
 function Queue() {
     this.stack = new Stack();
@@ -62,11 +56,9 @@ Queue.prototype.dequeue = () => {
     return returnVal;
 };
 
-
 function Node (val) {
     this.value = val;
     this.prev = null;
 }
-
 
 module.exports = {Stack: Stack, Queue: Queue};

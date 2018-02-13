@@ -13,14 +13,14 @@
 // Brute force way?? n^2
 
 function permPalin(str) {
-    const length = array.length;
+    const length = str.length;
 
     for (let i = 0; i < length; i++) {
         for (let v = i; v < length; v++) {
             const arr = str.split("");
             const temp = arr[i];
-            const arr[i] = arr[v];
-            const arr[v] = arr[i];
+            arr[i] = arr[v];
+            arr[v] = temp;
             const joined = arr.join("");
             const reversed = arr.join("").reverse();
             if (joined === reversed) return true;
