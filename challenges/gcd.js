@@ -8,7 +8,12 @@
  */
 
 function gcd(a, b) {
-
+  if (b === 0 || !b) return a;
+  return gcd(b, a % b);
 }
+
+// console.log(gcd(10, 8));
+// console.log(gcd(10, 9));
+// console.log(gcd(15, 20));
 
 module.exports = gcd;
