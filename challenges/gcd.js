@@ -12,7 +12,6 @@ function gcd(a, b) {
     if (a%b === 0) return b;
     if (b%a === 0) return a;
 
-
     let gd = 0;
     let length = (a < b) ? a : b;
     length = Math.ceil(Math.sqrt(length));
