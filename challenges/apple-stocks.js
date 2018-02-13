@@ -22,7 +22,7 @@ function bestProfit(stock_prices_yesterday) {
     if (!Array.isArray(stock_prices_yesterday)) return 0;
     if (stock_prices_yesterday < 2) return 0;
 
-    for (let i = 0; i < length; index++) {
+    for (let i = 0; i < length; i++) {
         if (buyPrice === 0) {
             buyPrice = array[i];
         } 
