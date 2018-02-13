@@ -15,7 +15,6 @@
 function bestProfit(stock_prices_yesterday) {
   // Can't make any money if you can't buy then sell
   if (stock_prices_yesterday.length <= 1) return 0;
-
   const profits = [0];
   for (let i = 1; i < stock_prices_yesterday.length; i += 1) {
     let profit = stock_prices_yesterday[i] - stock_prices_yesterday[i - 1];
