@@ -4,8 +4,12 @@
 
 
 function Stack() {
+
     this.storage = {};
     this.index = 0;
+
+
+
 }
 
 
@@ -15,6 +19,7 @@ function Stack() {
 
 
 function Queue() {
+
     let firstBox = new Stack();
     let lastBox = new Stack();
 
@@ -24,3 +29,6 @@ function Queue() {
 }
 
 module.exports = { Stack: Stack, Queue: Queue };
+
+
+
