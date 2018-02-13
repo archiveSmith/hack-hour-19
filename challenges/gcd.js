@@ -8,7 +8,17 @@
  */
 
 function gcd(a, b) {
+  const aFactors = getAllFactors(a);
+  const bFactors = getAllFactors(b);
+  return aFactors.reduce((biggestInBoth, aFactor) => {
+    return (bFactors.indexOf(aFactor) < 0) ? biggestInBoth : aFactor;
+  }, 1);
+}
 
+const getAllFactors = (num) => {
+  const factors = [];
+  for (let i = 2; i <= num / 2; i++) if (num % i === 0) factors.push(i);
+  return factors;
 }
 
 module.exports = gcd;
