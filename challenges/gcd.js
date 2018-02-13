@@ -22,6 +22,7 @@ function gcd(a, b) {
 		smaller--; 
 	}
 	return 0;
+	
 }
 
 module.exports = gcd;
