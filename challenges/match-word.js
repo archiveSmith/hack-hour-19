@@ -10,8 +10,33 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
+//remove punct from beginning and end
 
+//split string into array of substrings
+
+//iterate until first punctuation
+
+// push character into storage
+
+// check if next punc is equal to the last punc
+  //if not check if character equals the last in storag
+  //return true
+
+function matchWord(str) {
+ let strArray = str.match(/[a-zA-Z]+/g) || [];
+  let stack = [];
+  
+  for (let i = 0; i < strArray.length; i++) {
+    let currStr = strArray[i].toLowerCase().split('').reverse().join('');
+    if(currStr === stack[stack.length-1]) {
+      stack.pop()
+    } else {
+      stack.push(strArray[i].toLowerCase());
+    }
+  }
+  return stack.length ? false : true;
 }
+
+console.log(matchWord('IF()()fi[]'));
 
 module.exports = matchWord;

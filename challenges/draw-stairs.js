@@ -13,9 +13,18 @@
 
 */
 
-function drawStairs(n) {
 
+function drawStairs(n) {
+    var count = n;
+    var hash = "#";
+    var space = " ";
+     
+    
+    for(let i = 1; i <= count; i++) {
+        console.log(space.repeat(count - 1).concat(hash.repeat(i)));
+    }  
 }
 
+console.log(drawStairs(6));
 
 module.exports = drawStairs;
