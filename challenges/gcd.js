@@ -8,14 +8,19 @@
  */
 
 function gcd(a, b) {
-  let highestCommonDivisor = 0;
-  for (let i = 0; i < Math.max(a,b); i++) {
-    if (a % i === 0 && b % i === 0) {
-      highestCommonDivisor = i;
+    let highestCommonDivisor = 0;
+    if (Math.max(a,b) % Math.min(a,b) === 0) { 
+      highestCommonDivisor = Math.min(a,b) 
+    } else {
+      for (let i = 0; i < Math.min(a,b)/2; i++) {
+        if (a % i === 0 && b % i === 0) {
+          highestCommonDivisor = i;
+        }
+      }
     }
+    return highestCommonDivisor;
   }
-  return highestCommonDivisor;
-}
+   
  
 
 module.exports = gcd;
