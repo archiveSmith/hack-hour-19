@@ -8,7 +8,15 @@
  */
 
 function gcd(a, b) {
-
+  function recurse(i){
+    if(a%i === 0 && b%i === 0){
+      return i
+    }
+    if(--i === 0){return}
+    return recurse(i)
+  }
+  return recurse(Math.min(a,b))
 }
+
 
 module.exports = gcd;
