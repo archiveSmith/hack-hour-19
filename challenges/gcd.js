@@ -15,6 +15,9 @@ function gcd(a, b) {
       greatest.push(i);
     }
   }
+  if(greatest.length == 0) {
+    return 1;
+  }
   return Math.max(...greatest);
 }
 
