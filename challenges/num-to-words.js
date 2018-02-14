@@ -13,6 +13,67 @@
  */
 
 function numToWords(num) {
+	let outputString = ""; 
+	let strNum = num.toString().reverse();
+	let arrOfArrays = [];
+	for(let i=0; i<strNum.length;i+=3){
+		let arr = [];
+		if(strNum.charAt(i)){
+			arr.push(strNum.charAt(i));
+		}
+		if(strNum.chartAt(i+1)){
+			arr.push(strNum.charAt(i+1));
+		}
+		if(strNum.charAt(i+2)){
+			arr.push(strNum.charAt(i+2));
+		}
+		arrOfArrays.push(arr);
+	}
+	while(arrOfArrays.length>0){
+		switch(arrOfArrays.length){
+		 case 4:
+			let string = helperFunction(arrOfArrays[3]); 
+			string+=Billion; 
+			outputString+=string; 
+			arrOfArrays.pop(); 
+			break; 
+		 case 3: 
+			let string = helperFunction(arrOfArrays[2]); 
+			string+=Million; 
+			outputString+=string; 
+			arrOfArrays.pop();
+			break;
+		 case 2: 
+			let string = helperFunction(arrOfArrays[1]); 
+			string+=Thousand; 
+			outputString+=string; 
+			arrOfArrays.pop();
+			break; 
+		 case 1: 
+			let string = helperFunction(arrOfArrays[0])
+			outputString+=string;
+			arrOfArrays.pop();
+			break;
+		}
+	}
+
+	return outputString; 
+
+	function helperFunction(str){
+		let str.reverse();
+		let outputString = "";
+		if(str.length===3){
+			
+		}
+		if(str.length===2){
+
+		}
+		if(str.length===1){
+
+		}
+
+		return outputString; 
+	}
 
 }
 
