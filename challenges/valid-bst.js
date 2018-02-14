@@ -13,15 +13,12 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-    const queue = [tree];
-    
-    while (queue.length > 0) {
-        let root = queue.shift();
-        if (root.left && root.value < root.left.value) return false;
-        if (root.right && root.value > root.right.value) return false;
-        if (root.left && root.value > root.left.value) queue.push(root.left);
-        if (root.right && root.value < root.right.value) queue.push(root.right);
-    }
+    const root = tree;
+
+    if (root.left && root.value < root.left.value) return false;
+    if (root.right && root.value > root.right.value) return false;
+    if (root.left && root.value > root.left.value) validBST(root.left);
+    if (root.right && root.value < root.right.value) validBST(root.right);
 
     return true;
 }
