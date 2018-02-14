@@ -12,8 +12,60 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
-
+function validate(tree){
+  let left = true;
+  let right = true;
+  
+  if(tree.left){
+    if(tree.left.value > tree.value){
+      return false
+    }
+    left = validate(tree.left)
+  }
+  if(tree.right){
+    if(tree.right.value < tree.value){
+      return false
+    }
+    right = validate(tree.right)
+  }
+  return (left && right)
 }
+
+function highest(tree){
+  if(tree.right){
+    return highest(tree.right)
+  }
+
+  return tree.value
+}
+
+function lowest(tree){
+  if(tree.left){
+    return lowest(tree.left)
+  }
+
+  return tree.value
+}
+
+function validBST(tree) {
+  console.log(tree.value)
+  if(!tree.left && !tree.right){ return true }
+  if(!validate(tree)){
+    return false
+  }
+  
+  let largest_left = (tree.left ? highest(tree.left) : (tree.value -1));
+  let smallest_right = (tree.right ? lowest(tree.right) : (tree.value+1));
+
+  if(largest_left > tree.value){ return false }
+  if(smallest_right < tree.value ){ return false }
+
+  if(tree.right && tree.left)   return (validBST(tree.left) && validBST(tree.right))
+  if(tree.right && !tree.left) return (validBST(tree.right))
+  if(!tree.right && tree.left) return (validBST(tree.left))
+   
+}
+
+
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
