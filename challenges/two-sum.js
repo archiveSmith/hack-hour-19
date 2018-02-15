@@ -3,12 +3,14 @@
  */
 
 function twoSum(arr, n) {
-  let num;
+  if (!Array.isArray(arr)) return false;
   for (let i = 0; i < arr.length; i += 1) {
-    num = arr[i];
-    if (arr.indexOf(n - num) !== -1) return true;
+    if (arr.indexOf(n - arr[i]) !== i && 
+        arr.indexOf(n - arr[i]) !== -1) return true;
   }
   return false;
 }
+
+console.log(twoSum([2,3,4,5], 9));
 
 module.exports = twoSum;
