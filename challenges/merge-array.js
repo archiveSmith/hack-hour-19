@@ -1,5 +1,5 @@
 /**
- * We have our lists of orders sorted numerically already, in arrays.
+ We have our lists of orders sorted numerically already, in arrays.
  * Write a functin to merge our arrays of orders into one sorted array.
  * These may be of different lengths.
  *
@@ -14,7 +14,9 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+  return [...arr1, ...arr2].sort((a, b) => {
+    return a - b;
+  });
 }
 
 module.exports = mergeArrays;

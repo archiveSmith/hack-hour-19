@@ -5,12 +5,28 @@
  * BONUS: Do this in place
  */
 
-function Node(val) {
-  this.value = val;
-  this.next = null;
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
 }
 
-function zip(l1, l2) {
-};
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
 
-module.exports = {Node: Node, zip: zip};
+  insertFirst(data) {
+    this.head = new Node(data, this.head);
+  }
+
+  zip(l1, l2) {
+    return new LinkedList(new Node(l1.head));
+  }
+}
+
+let list1 = LinkedList.insertFirst("test");
+console.log(list1);
+
+module.exports = { Node: Node, LinkedList: LinkedList };

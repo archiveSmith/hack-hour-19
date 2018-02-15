@@ -7,7 +7,34 @@
  */
 
 function Stack() {
-  // body...
+  this.data = {};
+  this.index = 0;
 }
+
+//pop + return element that was removed
+Stack.prototype.pop = function() {
+  let result = this.data[this.index - 1];
+  delete this.data[this.index - 1];
+  this.index -= 1;
+  return result;
+};
+
+//push + return new length
+Stack.prototype.push = function(value) {
+  this.data[this.index] = value;
+  this.index++;
+  return this.index;
+};
+
+//getMax return largest value in stack
+Stack.prototype.getMax = function() {
+  let max = 0;
+  for (item of Object.values(this.data)) {
+    if (item > max) {
+      max = item;
+    }
+  }
+  return max;
+};
 
 module.exports = Stack;
