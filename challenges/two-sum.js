@@ -3,7 +3,14 @@
  */
 
 function twoSum(arr, n) {
-
+    let arrCopy = arr;
+    for (let i=0; i<arrCopy.length; i++) {
+        for (let j=1; j<arrCopy.length; j++) {
+            if (arrCopy[i] + arrCopy[j] === n) return true;
+            }
+ 		arrCopy.shift();
+        }
+    return false;
 }
 
 module.exports = twoSum;
