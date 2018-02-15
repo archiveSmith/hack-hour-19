@@ -26,6 +26,44 @@
 
 function balancedParens(input){
 
+  let brackets = ['(', ')', '{', '}', '[', ']'];
+
+  let bracketStack = [];
+  let chars = input.split('');
+  for (let i = 0; i < chars.length; i ++) {
+    let c = chars[i];
+    let x = brackets.indexOf(c);
+    //console.log('c', c);
+    //console.log('x', x);
+    if (x > -1) {
+      if (x % 2 === 0) {
+        bracketStack.push(c)
+      } else if (bracketStack.length === 0 || bracketStack.pop() !== brackets[x-1]){
+        return false;
+      }
+    }
+  }
+
+  return (bracketStack.length === 0);
 }
+
+function tests() {
+  console.log(balancedParens('('));
+  console.log(balancedParens('()'));
+  console.log(balancedParens(')('));
+
+  console.log(balancedParens('(())'));
+  console.log(balancedParens('[](){}'));
+  console.log(balancedParens('[(]{)}'));
+
+  console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }'));
+  console.log(balancedParens(' var hubble = function() { telescopes.awesome();'));
+  console.log(balancedParens('[({[({})]var hubble = function({{}[]}) { telescopes.awesome() };})]'));
+
+
+
+}
+
+//tests()
 
 module.exports = balancedParens;
