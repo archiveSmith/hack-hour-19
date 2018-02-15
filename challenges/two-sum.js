@@ -3,7 +3,18 @@
  */
 
 function twoSum(arr, n) {
-
+    let hashTable = {};
+  
+    for (let i = 0; i < arr.length; i += 1) {
+      let sumMinusElement = n - arr[i];
+      
+      if (hashTable[sumMinusElement] !== undefined) {
+        return true;
+      }
+      
+      hashTable[arr[i]] = true;
+    }
+    return false;
 }
 
 module.exports = twoSum;
