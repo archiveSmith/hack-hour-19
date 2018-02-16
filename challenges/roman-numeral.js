@@ -18,31 +18,43 @@
  */
 
 function romanNumeral(n) {
-  if (typeof n !== "number") return false;
-  const arabicVal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  const romanVal = [
+  var map = [
+    1000,
     "M",
+    900,
     "CM",
+    500,
     "D",
+    400,
     "CD",
+    100,
     "C",
+    90,
     "XC",
+    50,
     "L",
+    40,
     "XL",
+    10,
     "X",
+    9,
     "IX",
+    5,
     "V",
+    4,
     "IV",
+    1,
     "I"
   ];
-  let result = "";
-  for (let i = 0; i <= arabicVal.length; i++) {
-    while (n % arabicVal[i] < n) {
-      result += romanVal[i];
-      n -= arabicVal[i];
+
+  var value = "";
+  for (var idx = 0; n > 0 && idx < map.length; idx += 2) {
+    while (n >= map[idx]) {
+      value += map[idx + 1];
+      n -= map[idx];
     }
   }
-  return result;
+  return value;
 }
 
 module.exports = romanNumeral;

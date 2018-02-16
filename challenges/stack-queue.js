@@ -1,40 +1,59 @@
 /**
- * Create a stack.Then create a queue using two stacks.
+ * Create a stack. Then create a queue using two stacks.
  */
 
 function Stack() {
-  this.data = {};
-  this.index = 0;
+  this.stack = {};
+  this.length = 0;
+
+  this.push = e => {
+    this.stack[this.length] = e;
+    this.length += 1;
+    return e;
+  };
+
+  this.pop = () => {
+    if (!this.length) {
+      return undefined;
+    }
+
+    this.length -= 1;
+
+    const e = this.stack[this.length];
+    delete this.stack[this.length];
+    return e;
+  };
 }
-
-Stack.prototype.push = function(item) {
-  this.data[this.index] = item;
-  this.index++;
-};
-
-Stack.prototype.pop = function() {
-  let result = this.data[this.index - 1];
-  delete this.data[this.index - 1];
-  this.index -= 1;
-  return result;
-};
 
 /**
  * Queue Class
  */
 
 function Queue() {
-  this.stack1 = new Stack();
-  this.stack2 = new Stack();
+  this.leftStack = new Stack();
+  this.rightStack = new Stack();
+  this.length = 0;
+
+  this.enqueue = e => {
+    this.leftStack.push(e);
+    this.length += 1;
+    return e;
+  };
+
+  this.dequeue = () => {
+    // if nothing in queue, return undefined
+    if (!this.rightStack.length && !this.leftStack.length) {
+      return undefined;
+    }
+
+    // if rightStack is empty, put leftStack into it
+    if (!this.rightStack.length) {
+      for (let i = 0; i < this.length; i += 1) {
+        this.rightStack.push(this.leftStack.pop());
+      }
+    }
+
+    this.length -= 1;
+    return this.rightStack.pop();
+  };
 }
-
-Queue.prototype.enqueue = function(item) {
-  this.stack1.push(item);
-};
-
-Queue.prototype.dequeue = function() {
-  this.stack2.push(this.stack1.pop());
-  return this.stack1.pop();
-};
-
-module.exports = { Stack: Stack, Queue: Queue };

@@ -12,24 +12,41 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
+// Brute-Force
 function bestProfit(stock_prices_yesterday) {
-  if (!stock_prices_yesterday || stock_prices_yesterday.length < 1) return 0;
-
-  let highest = Number.NEGATIVE_INFINITY;
-  let lowest = Number.MAX_SAFE_INTEGER;
-
-  for (let i = 0; i < stock_prices_yesterday.length; i++) {
-    if (stock_prices_yesterday[i] > highest) {
-      highest = stock_prices_yesterday[i];
-    }
-    if (stock_prices_yesterday[i] < lowest) {
-      lowest = stock_prices_yesterday[i];
+  var best = 0;
+  for (var i = 0; i < stock_prices_yesterday.length; i++) {
+    for (var j = i; j < stock_prices_yesterday.length; j++) {
+      best = Math.max(
+        best,
+        stock_prices_yesterday[j] - stock_prices_yesterday[i]
+      );
     }
   }
+  return best;
+}
 
-  let profit = highest - lowest;
+// Better Solution
+function bestProfit(stock_prices_yesterday) {
+  var maxProfit = 0;
+  var possibleProfit = 0;
+  var minI = 0,
+    maxI = 0;
+  if (stock_prices_yesterday) {
+    for (var i = 0; i < stock_prices_yesterday.length; i++) {
+      if (stock_prices_yesterday[i] < stock_prices_yesterday[minI]) {
+        minI = i;
+      }
 
-  return !profit ? 0 : profit;
+      possibleProfit = stock_prices_yesterday[i] - stock_prices_yesterday[minI];
+
+      if (possibleProfit > maxProfit) {
+        maxProfit = possibleProfit;
+        maxI = i;
+      }
+    }
+  }
+  return maxProfit;
 }
 
 module.exports = bestProfit;
