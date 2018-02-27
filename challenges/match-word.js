@@ -11,7 +11,17 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    if (!str.length) return true;
+    let regex = /([%$@!-_#*\(\)\{\}\[\].,])/g
+    str = str.toLowerCase().replace(regex, ' ').replace(/\s+/g, ' ').trim();
 
+    let firstSpace = str.indexOf(' ');
+    let firstWord = str.slice(0, firstSpace);
+    let lastSpace = str.lastIndexOf(' ');
+    let lastWord = str.slice(lastSpace + 1).split('').reverse().join('');
+
+    return (firstWord === lastWord);
 }
+
 
 module.exports = matchWord;

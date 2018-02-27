@@ -14,8 +14,18 @@
 */
 
 function drawStairs(n) {
-
+    let str = '';
+    let spaceCount = n - 1;
+    let starCount = 0;
+    while(n){
+        str += ' '.repeat(spaceCount) +  '*'.repeat(starCount) + '*\n';
+        spaceCount--;
+        starCount++;
+        n--
+    }
+    console.log(str);
 }
+
 
 
 module.exports = drawStairs;

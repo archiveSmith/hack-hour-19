@@ -24,8 +24,17 @@
  *
  */
 
-function balancedParens(input){
-
+function balancedParens (input) {
+	let strArr = input.split('');
+	let balancedStuff = false;
+    let stringPairs = ['()', '[]', '{}'];
+	
+  for (let i = 0; i < stringPairs.length; i++) {
+      let open = strArr.filter(str => str === stringPairs[i].charAt(0));
+      let closed = strArr.filter(str => str === stringPairs[i].charAt(1));
+      if (open.length !== closed.length) return false;  
+  } 
+  return true;
 }
 
 module.exports = balancedParens;
