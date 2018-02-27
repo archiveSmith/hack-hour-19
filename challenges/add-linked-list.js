@@ -28,7 +28,7 @@ function addLinkedList(l1, l2) {
 
   newNode1 = l1.head + l2.head;
   newNode2 = l1.head.next + l2.head.next;
-  newNode3 = l1.head.next.next + l2.head.next;
+  newNode3 = l1.head.next.next + l2.head.next.next;
 
   if (newNode1 > 9) {
     newNode2 = newNode2 + 1;
