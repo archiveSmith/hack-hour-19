@@ -42,4 +42,12 @@ Stack.prototype.getMax = function() {
   return max;
 }
 
+let stack1 = new Stack();
+let stack2 = new Stack();
+let stack3 = stack1;
+
+stack3.push(4);
+
+stack1.push(3);
+
 module.exports = Stack;
