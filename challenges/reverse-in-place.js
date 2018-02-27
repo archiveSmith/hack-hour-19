@@ -14,7 +14,24 @@
  */
 
 function reverseInPlace(array) {
+    // let reverse = array.join("");
+    // for (let i = reverse.length - 1; i >= 0; i--) {
+    //     reverse += reverse[i];
+    // }
+    // return reverse.split("").slice(array.length, reverse.length);
+    let arrLengthIndex = array.length - 1;
+    let start = 0;
+    while (arrLengthIndex > start) {
+        if (arrLengthIndex < array.length / 2) {
 
+            array[arrLengthIndex = array[start]]
+        }
+        array[start] = array[arrLengthIndex]
+        arrLengthIndex--
+        start++
+    }
+    return array
 }
+console.log(reverseInPlace(['a', 'b', 'c', 'd']))
 
 module.exports = reverseInPlace;

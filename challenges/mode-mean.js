@@ -11,6 +11,24 @@
 
 
 function modemean(array) {
+    //calculate mean;
+    let totalMean = 0;
+    for (let i = 0; i < array.length; i++) {
+        totalMean += array[i];
+    }
+    totalMean = totalMean / array.length
+    console.log(totalMean)
+    //calculate mode;
+    let modeArr = {};
+    let arr = [];
+    for (let i = 0; i < array.length; i++) {
+        if (modeArr[array[i]] === undefined) {
+            modeArr[array[i]] = 0;
+        }
+
+        modeArr[array[i]] += 1
+    }
+    Object.values(modeArr);
 
 }
 
