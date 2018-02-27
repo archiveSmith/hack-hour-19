@@ -11,7 +11,15 @@
 
 
 function modemean(array) {
-
+    let mean = 0;
+    let sum = 0;
+    let mode = {};
+    array.forEach(element => {
+      sum += element;
+      mode[element] = (mode[element] || 0) += 1;
+    });
+    mean = Math.floor(sum / array.length);
+    Object.va
 }
 
 module.exports = modemean;
