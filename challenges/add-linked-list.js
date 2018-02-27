@@ -17,8 +17,43 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
 
+  add(thing) {
+    if (!this.head) {
+      const newNode = new Node(thing);
+      this.head = newNode;
+    } else {
+      let node = this.head;
+      while (node.next) {
+        node = node.next;
+      }
+      const newerNode = new Node(thing);
+      node.next = newerNode;
+    }
+  }
 }
 
-module.exports = {Node: Node, addLinkedList: addLinkedList};
+function addLinkedList(l1, l2) {
+  let ones = l1.head + l2.head;
+  let tens = l1.head.next + l2.head.next;
+  let hunds = l1.head.next.next + l1.head.next.next;
+  if (ones > 9) {
+    ones = Number(("" + ones).split("")[1]);
+    tens++;
+  }
+  if (tens > 9) {
+    tens = Number(("" + tens).split("")[1]);
+    hunds++;
+  }
+  let result = new LinkedList();
+  result.add(ones);
+  result.add(tens);
+  result.add(hunds);
+  return result;
+}
+
+module.exports = { Node: Node, addLinkedList: addLinkedList };
