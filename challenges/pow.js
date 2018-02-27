@@ -2,8 +2,10 @@
  * Use recursion!
  */
 
-function power(base, exponent) {
-  return exponent == 0 ? 1 : base * power(base, --exponent);
+function pow(base, power) {
+  if (!power) return 1;
+
+  return base * pow(base, power - 1);
 }
 
 module.exports = pow;

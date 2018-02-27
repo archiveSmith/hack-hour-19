@@ -3,12 +3,10 @@
  */
 
 function twoSum(arr, n) {
-  for (
-    let i = 0, j = arr.length - 1;
-    i < Math.round(arr.length - 1 / 2);
-    i++, j--
-  ) {
-    if (arr[i] + arr[j] === n) return true;
+  for (var i = 0; i < Math.round(arr.length - 1 / 2); i++) {
+    for (let j = arr.length - 1; j > i; j--) {
+      if (arr[i] + arr[j] === n) return true;
+    }
   }
   return false;
 }

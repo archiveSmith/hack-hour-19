@@ -10,54 +10,92 @@
  * numToWords(300525151340440) -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
  * numToWords(92120000000000000) -> 'NintyTwoQuadrillionOneHundredTwentyTrillion'
  */
+// array of unique number words
+const powerThousand = {
+  0: "",
+  1: "Thousand",
+  2: "Million",
+  3: "Billion",
+  4: "Trillion",
+  5: "Quadrillion"
+};
+const ones = [
+  "Zero",
+  "One",
+  "Two",
+  "Three",
+  "Four",
+  "Five",
+  "Six",
+  "Seven",
+  "Eight",
+  "Nine",
+  "Ten",
+  "Eleven",
+  "Twelve",
+  "Thirteen",
+  "Fourteen",
+  "Fifteen",
+  "Sixteen",
+  "Seventeen",
+  "Eighteen",
+  "Nineteen"
+];
+const tens = [
+  "Zero",
+  "Ten",
+  "Twenty",
+  "Thirty",
+  "Fourty",
+  "Fifty",
+  "Sixty",
+  "Seventy",
+  "Eighty",
+  "Ninty"
+];
 
-function numToWords(num) {
-  let numToArray = ("" + num).split("");
-  let length = numToArray.length;
-  let single = [
-      "Zero",
-      "One",
-      "Two",
-      "Three",
-      "Four",
-      "Five",
-      "Six",
-      "Seven",
-      "Eight",
-      "Nine"
-    ],
-    doubles = [
-      "Ten",
-      "Eleven",
-      "Twelve",
-      "Thirteen",
-      "Fourteen",
-      "Fifteen",
-      "Sixteen",
-      "Seventeen",
-      "Eighteen",
-      "Nineteen",
-      "Twenty"
-    ],
-    tens = [
-      "Twenty",
-      "Thirty",
-      "Forty",
-      "Fifty",
-      "Sixty",
-      "Seventy",
-      "Eighty",
-      "Ninety"
-    ],
-    powers = ["Hundred", "Thousand", "Million", "Billion"];
+// helper function that returns 3 digit numbers
+function threeDigit(number) {
+  let numWord = "";
+  let num = number;
 
-  if (length === 1) return single[num];
-  if (length === 2) return doubles[numToArray[1]];
-  if (length > 3) {
-    return single[numsToArray[0]];
+  // check hundreds
+  if (Math.floor(num / 100) > 0) {
+    numWord += `${ones[Math.floor(num / 100)]}Hundred`;
+    num -= Math.floor(num / 100) * 100;
   }
+
+  // check tens
+  if (Math.floor(num / 10) > 1) {
+    numWord += tens[Math.floor(num / 10)];
+    num -= Math.floor(num / 10) * 10;
+  }
+
+  // check 0-19
+  if (num) {
+    numWord += ones[num];
+  }
+
+  return numWord;
 }
 
-console.log(numToWords(115));
+// main function
+function numToWords(number) {
+  let num = number;
+  if (!Number.isInteger(num)) return undefined;
+  if (num === 0) return "Zero";
 
+  let word = "";
+
+  // figure out powers of 100
+  for (let i = 5; i >= 0; i -= 1) {
+    if (num - 1000 ** i > 0) {
+      const hundreds = Math.floor(num / 1000 ** i);
+      word += threeDigit(hundreds) + powerThousand[i];
+      num -= hundreds * 1000 ** i;
+    }
+  }
+
+  return word;
+}
 module.exports = numToWords;
