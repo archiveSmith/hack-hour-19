@@ -17,4 +17,7 @@ function twoSum(arr, n) {
 }
 
 //console.log(twoSum([10, -8, 6, 4, -2, 1], 11 ));
+
+}
+
 module.exports = twoSum;
