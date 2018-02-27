@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b32fd79-606d-46a2-b838-4e8004ec6d45" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/challenges/two-sum.js" />
-      <change beforePath="$PROJECT_DIR$/challenges/index.html" afterPath="$PROJECT_DIR$/challenges/index.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="two-sum.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/challenges/two-sum.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+            <state relative-caret-position="114">
+              <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -235,12 +234,12 @@
       <workItem from="1518283951226" duration="2588000" />
       <workItem from="1518629023755" duration="5167000" />
       <workItem from="1518649950737" duration="2293000" />
-      <workItem from="1518715856613" duration="1198000" />
+      <workItem from="1518715856613" duration="1373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49774000" />
+    <option name="totallyTimeSpent" value="49949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1640" y="36" width="1563" height="933" extended-state="0" />
@@ -662,8 +661,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/challenges/two-sum.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        <state relative-caret-position="114">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
