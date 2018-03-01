@@ -11,9 +11,19 @@
  */
 
 function repeatNumbers(array) {
+  /* O(n) time */
+  const tracker = {};
+  for (let i = 0; i < array.length; i++) {
+    if (!tracker[array[i]]) tracker[array[i]] = 1;
+    else return array[i];
+  }
+
+  /* BRUTE FORCE
   for (let i = 1; i < array.length; i++) {
     if (array.indexOf(i) !== array.lastIndexOf(i)) return i;
   }
+  */
 }
-
-module.exports = repeatNumbers;
+// const arr = [1, 3, 4, 4, 2];
+// console.log(repeatNumbers(arr));
+// module.exports = repeatNumbers;
