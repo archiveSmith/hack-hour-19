@@ -11,7 +11,13 @@
  */
 
 function repeatNumbers(array) {
-
+  let val;
+  let cache = {};
+  for (let i = 0; i < array.length; i += 1) {
+    val = array.pop();
+    if (cache.hasOwnProperty(val)) return val;
+    cache[val] = 1;
+  }
 }
 
 module.exports = repeatNumbers;

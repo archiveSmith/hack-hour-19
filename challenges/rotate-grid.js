@@ -16,8 +16,18 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
+grid1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
+function rotateGrid(grid, n) {
+  let arr = [];
+  for (let i = 0; i < grid.length; i += 1) {
+    let sub_arr = [];
+    for (let j = 0; j < grid.length; j += 1) {
+      sub_arr.push(grid[grid.length - 1 - j][i]);
+    }
+    arr.push(sub_arr);
+  }
+  return arr;
 }
 
 module.exports = rotateGrid;

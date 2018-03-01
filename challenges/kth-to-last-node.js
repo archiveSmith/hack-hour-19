@@ -22,7 +22,39 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  // Check if head exists
+  if (head === undefined) {
+    return console.log('no value');
+  }
 
+  // Count total nodes
+  let current = head;
+  let count = 1;
+  while (current.next) {
+    count += 1;
+    current = current.next;
+  }
+
+  current = head;
+
+  // Find the distance to traverse
+  let difference = count - k;
+  let index = 0;
+
+  // Get kth from last node
+  while (index < difference) {
+    index += 1;
+    current = current.next;
+  }
+
+  return current.value;
 }
+
+// function kthToLast(k, head) {
+//   if (head === undefined) {
+//     return 'no value'
+//   }
+
+// }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
