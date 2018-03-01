@@ -18,6 +18,12 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2, result) {
+  //added from codesmith:
+  // if (!l1 && !l2 && !result) {
+  //   return null;
+  // }
+
+
   if (l1.next === null) {
     return l2;
   }
@@ -27,10 +33,8 @@ function addLinkedList(l1, l2, result) {
   }
   
   const sum = l1.value + l2.value;
-  if (sum <= 9) {
-    result = new Node(sum);
-  } else {
-    result = new Node(sum % 10);
+  result = new Node(sum % 10);
+  if (sum > 9) {
     l1.next.value += 1;
   }
   result.next = addLinkedList(l1.next, l2.next);
