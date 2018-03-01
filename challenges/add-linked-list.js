@@ -39,7 +39,7 @@ function addLinkedList(l1, l2) {
   let num2 = Number(arr2.reverse().join(''));
 
   let numSum = num1 + num2;
-  let numSumList = numSum.toString().split('').reverse()
+  let numSumList = numSum.toString().split('').reverse();
 
   let head = new Node(numSumList[0]);
   let current = head;
@@ -50,6 +50,7 @@ function addLinkedList(l1, l2) {
     }
     current.next = new Node(numSumList[i]);
   }
+
   return head;
 }
 
