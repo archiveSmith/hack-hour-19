@@ -17,13 +17,13 @@ function superbalanced(tree) {
   let left = 0;
   let right = 0;
 
-  if (tree.right === value) {
+  if (tree.right !== null) {
     right++
     tree.right = tree
     return superbalanced(tree)
   }
 
-  if (tree.left === value) {
+  if (tree.left !== null) {
     left++
     tree.left = tree
     return superbalanced(tree)
