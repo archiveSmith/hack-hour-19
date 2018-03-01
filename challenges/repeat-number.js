@@ -11,7 +11,19 @@
  */
 
 function repeatNumbers(array) {
-
+    let stringNumArr = [];
+    array.forEach((elem) => {stringNumArr.push(elem.toString())});
+    
+    let numObj = stringNumArr.reduce(function(result, elem) {
+      result[elem] = (result[elem] || 0) + 1;
+      return result;
+    }, {});
+    
+    for (let key in numObj) {
+      if (numObj[key] >=2) {
+        return key;
+      }
+    }
 }
 
 module.exports = repeatNumbers;
