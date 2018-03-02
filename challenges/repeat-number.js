@@ -11,10 +11,11 @@
  */
 
  function repeatNumbers(array) {
+
    return array.filter((x,i) => {
+
      return array.indexOf(x) !== i;
    });
-
  }
 
 
