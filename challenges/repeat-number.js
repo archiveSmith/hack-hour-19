@@ -20,7 +20,6 @@ function repeatNumbers(array) {
             return numbers[array[[i]]]
         }
     }
-
     return null;
 }
 
