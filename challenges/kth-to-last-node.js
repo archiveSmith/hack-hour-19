@@ -22,7 +22,29 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let itr = head
 
+  //get the length of the list first
+  let count = 1;
+  while (itr.next){
+    itr=itr.next;
+    //now itr is the LAST node
+    count++;
+    //now count tells me the length of the list.
+  }
+
+  if (k>count) return undefined;
+
+  const steps = count - k;
+  //steps tells me how many steps I need to go down the list.
+
+  itr = head;
+  for (let i=0; i<steps; i++){
+    itr = itr.next;
+  }
+  // if (!itr) return undefined;
+  return itr.value;
 }
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};

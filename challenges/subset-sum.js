@@ -9,7 +9,20 @@
  */
 
 function subsetSum(array, target) {
-
+    if (array.length===0) return false;
+    let results = []
+    function resultBuilder(array, index, sum) {
+        if (index === array.length-1){
+            results.push(sum);
+            results.push(sum+array[index]);
+            return
+        }
+        resultBuilder(array, index + 1, sum+array[index]);
+        resultBuilder(array, index + 1, sum);
+    } 
+    resultBuilder(array, 0, 0);
+    if (results.includes(target)) return true;
+    return false;
 }
 
 module.exports = subsetSum;

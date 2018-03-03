@@ -24,8 +24,31 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+    if (input==='') return false;
+    if (typeof input === 'undefined') return false;
+    let filtArr = input.split('').filter(char => (char === '[' || char === ']' || char === '(' || char === ')' || char === '{' || char === '}'));
 
+    if (filtArr.length % 2 !== 0) return false;
+    
+    //for every closing bracket, the character right before it has to be the same type. if it is, remove both from the array and check again. if it isn't, return false.
+    while (filtArr.length > 0) {
+        let i = 0;
+        while (filtArr[i] !== ')' && filtArr[i] !== ']' && filtArr[i] !== '}') {
+            i++;
+        }
+        if (filtArr[i] === ')' && filtArr[i - 1] === '(') {
+            filtArr.splice(i - 1, 2);
+        } else if (filtArr[i] === '}' && filtArr[i - 1] === '{') {
+            filtArr.splice(i - 1, 2);
+        } else if (filtArr[i] === ']' && filtArr[i - 1] === '[') {
+            filtArr.splice(i - 1, 2);
+        } else {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 module.exports = balancedParens;

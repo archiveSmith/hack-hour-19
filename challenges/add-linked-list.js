@@ -17,8 +17,29 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
+function addLinkedList(l1, l2, result) {
+  //added from codesmith:
+  // if (!l1 && !l2 && !result) {
+  //   return null;
+  // }
 
+
+  if (l1.next === null) {
+    return l2;
+  }
+  
+  if (l2.next === null) {
+    return l1;
+  }
+  
+  const sum = l1.value + l2.value;
+  result = new Node(sum % 10);
+  if (sum > 9) {
+    l1.next.value += 1;
+  }
+  result.next = addLinkedList(l1.next, l2.next);
+  return result;
 }
+
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

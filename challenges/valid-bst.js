@@ -13,7 +13,7 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-
+    // do like, a left-root-right search and return false if !(left<root<right)
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
