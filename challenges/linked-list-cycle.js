@@ -33,6 +33,18 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  let turtle = head;
+  let hare = head.next;
+
+  while (turtle.value && hare.value) {
+    if (turtle.value === hare.value) {
+      return true;
+    }
+    turtle = turtle.next;
+    hare = hare.next.next;
+  }
+
+  return false;
 
 }
 
