@@ -37,6 +37,7 @@ function hasCycle(head) {
   while (itr) {
     if (itr.value === 'marked') {
       return true;
+      break;
     }
     itr.value = 'marked';
     itr = itr.next;
