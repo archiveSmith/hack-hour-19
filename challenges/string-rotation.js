@@ -12,11 +12,18 @@
  */
 
 function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+  if(s1.length !== s2.length){return false}
+  let head = s2.indexOf(s1[0]);
+  let flag = true
+  for(i of s1){
+    (i === s2[head++%s1.length] ? flag : flag = false)
+  }
+
+  return flag
 }
 
 function stringRotation(s1, s2) {
-
+  return isSubstring(s1,s2)
 }
 
-module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+//module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

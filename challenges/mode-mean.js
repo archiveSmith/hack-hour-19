@@ -11,19 +11,27 @@
 
 
 function modemean(array) {
-    let count = array.reduce((acc,cur) => {
-        if(!acc.hasOwnProperty(cur)){
-            acc[cur]=0;
-        }
-        acc[cur]++
-        return acc
-    },{})
-    let modeNum = Object.keys(count).reduce((acc,cur) => count[cur][0] > acc ? count[cur][0]:acc)
-    
-    let total = array.reduce((acc,cur) => acc+cur , 0)
-    let mean = Math.floor(total/array.length)
+  let count = array.reduce((acc,cur) => {
+    if(!acc.hasOwnProperty(cur)){
+      acc[parseInt(cur)]=0;
+    }
+    acc[cur]++
+    return acc
+  },{})
 
-    return total === mean
+
+  count.length = Object.keys(count).length
+  console.log(count)
+  let arrNum = Array.prototype.slice(count,0)
+  console.log(arrNum)
+  
+  let modeNum = Object.keys(count).reduce((acc,cur) => count[cur][0] > acc ? count[cur][0]:acc)
+  
+  let total = array.reduce((acc,cur) => acc+cur , 0)
+  let mean = Math.floor(total/array.length)
+  
+  return total === mean
 }
 
-module.exports = modemean;
+//module.exports = modemean;
+modemean([5,5,3,2,1,1,1,3,5])

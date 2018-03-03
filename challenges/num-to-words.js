@@ -13,7 +13,14 @@
  */
 
 function numToWords(num) {
-
+  let strNum = num.toString().split('').reverse().join('').replace(/(.{3})/g,"$1,").split('').reverse().join('')
+  
+  //can happen w reverse regex
+  if(strNum[0]===','){ strNum = strNum.substr(1)}
+  console.log(strNum)
 }
 
-module.exports = numToWords;
+numToWords(2483579411);
+numToWords(300525151340440);
+
+//module.exports = numToWords;
