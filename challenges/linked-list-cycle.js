@@ -30,10 +30,15 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
-}
+};
 
 function hasCycle(head) {
-
+  try {
+    JSON.stringify(head);
+    return true;
+  } catch (err) {
+    return false;
+  }
 }
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+module.exports = { Node: Node, hasCycle: hasCycle };
