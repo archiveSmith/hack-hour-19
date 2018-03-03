@@ -14,7 +14,9 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
-
-}
+	// if node's left and right are not empty, make recursive call on both left and right
+	// if only one side of the node is empty and the other side is not empty, check the non-empty node to see if it has a child, if so, return unbalanced
+	// if both sides of a node is empty, just return. 
+}	// end case, 
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
