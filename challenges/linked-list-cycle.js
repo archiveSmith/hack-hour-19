@@ -33,11 +33,11 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-  let itr = this.head;
+  let itr = head;
   while (itr) {
     if (itr.value === 'marked') {
       return true;
-      break;
+      // break;
     }
     itr.value = 'marked';
     itr = itr.next;
