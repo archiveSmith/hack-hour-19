@@ -11,7 +11,10 @@
 
 
 function mergeRanges(array) {
-  for (let i = 0; i < array.length; i++) {
+  // sort by element 0
+
+  let result = [array[0]];
+  for (let i = 1; i < array.length; i++) {
     
   }
 }
