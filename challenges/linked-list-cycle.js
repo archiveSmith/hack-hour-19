@@ -27,12 +27,15 @@
  *
  */
 
+
 var Node = function (value) {
+
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
+
   if (head === null || head.next === null) {
     return false
   } else {
@@ -47,4 +50,9 @@ function hasCycle(head) {
   return false;
 }
 
+
+
+
+
 module.exports = { Node: Node, hasCycle: hasCycle }
+
