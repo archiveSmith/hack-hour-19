@@ -12,11 +12,11 @@ function sumMultiples3Or5Below1000() {
     sum += i;
   }
   for (let j=0; j<1000; j+=5) {
-    sum += i;
+    sum += j;
   }
   // subtract duplicates
   for (let k=0; k<1000; k+=15) {
-    sum -= i;
+    sum -= k;
   }
   
   
