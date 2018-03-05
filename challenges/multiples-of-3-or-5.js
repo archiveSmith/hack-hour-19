@@ -6,9 +6,16 @@
 // below 1000 and return that sum.
 
 function sumMultiples3Or5Below1000() {
-  let sum = 0;
 
-  return sum;
+  let multiples = [];
+  for(let i = 1; i<=1000; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      multiples.push(i);
+    }
+  }
+  return multiples.reduce((accum,curr) => {
+    return accum + curr
+  },0);
 }
 
 
