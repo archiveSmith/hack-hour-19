@@ -33,13 +33,13 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  // efficient, but mutates the list. Could fix this, but take up more time by storing the return value in a variable and then going back and cleaning up the nodes once done.
   let itr = head;
   while (itr) {
-    if (itr.value === 'marked') {
+    if (itr.visited === true) {
       return true;
-      // break;
     }
-    itr.value = 'marked';
+    itr.visited = true;
     itr = itr.next;
   }
   return false;
