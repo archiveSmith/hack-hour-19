@@ -8,7 +8,19 @@
  */
 
 function maxSubarray(arr) {
-
+  // Brute force: look at all possible subarrays
+  let maxSum = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    let sum = arr[i];
+    for (let j = i + 1; j < arr.length; j++) {
+      sum += arr[j];
+      if (sum > maxSum) maxSum = sum;
+    }
+  }
+  return maxSum;
 }
 
+console.log('Expect 18:', maxSubarray([1, -2, 3, 10, -4, 7, 2, -5])); // -> 18 from [3, 10, -4, 7, 2]
+console.log('Expect 35:', maxSubarray([15,20,-5]));
+console.log('Expect 39:', maxSubarray([-1,15,20,-5,-1,10])); //  -> 39
 module.exports = maxSubarray;
