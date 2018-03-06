@@ -18,7 +18,40 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-
+  if (!l1 && !l2) return undefined;
+  if (!l1) return l2;
+  if (!l2) return l1;
+  let carryOver = false;
+  const sumList = new Node(l1.value + l2.value); // Create head
+  let k = sumList;
+  let i = l1.next;
+  let j = l2.next;
+  // Create a new node in sum list containing sum of digits
+  // Check if sum is >= 10 - if so, subtract 10 and add 1 to next node
+  while (i && j) {
+    let sum = i.value + j.value;
+    if (carryOver) sum++;
+    if (sum > 9) {
+      carryOver = true;
+      sum -= 10;
+    } else {
+      carryOver = false;
+    }
+    k.next = new Node(sum);
+    k = k.next;
+    i = i.next;
+    j = j.next;
+  }
+  if (!i && j) {
+    k.next = j;
+    if (carryOver) k.next.value++;
+  }
+  else if (!j && i) { 
+    k.next = i;
+    if (carryOver) k.next.value++;
+  }
+  else if (carryOver) k.next = new Node(1);
+  return sumList;
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
