@@ -34,15 +34,32 @@ var Node = function(value) {
 
 function hasCycle(head) {
   // efficient, but mutates the list. Could fix this, but take up more time by storing the return value in a variable and then going back and cleaning up the nodes once done.
-  let itr = head;
-  while (itr) {
-    if (itr.visited === true) {
-      return true;
-    }
-    itr.visited = true;
-    itr = itr.next;
+  // let itr = head;
+  // while (itr) {
+  //   if (itr.visited === true) {
+  //     return true;
+  //   }
+  //   itr.visited = true;
+  //   itr = itr.next;
+  // }
+  // return false;
+
+
+
+  // MOST EFFICIENT: TORTOISE AND HARE
+  if (head && head.next) {
+    return chase(head, head.next);
   }
   return false;
 }
+
+function chase(tortoise, hare) {
+  if (tortoise === hare) return true;
+  tortoise = tortoise.next;
+  hare = hare.next.next;
+  return (hare.next !== null && hare !== null && chase(tortoise, hare));
+}
+
+
 
 module.exports = {Node: Node, hasCycle: hasCycle}
