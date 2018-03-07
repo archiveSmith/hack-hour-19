@@ -13,7 +13,30 @@
   */
 
 function anagrams(string) {
+  const combo = [];
+  // possible permutations
+  // abc
+  // bac
+  // cab
+  // bac
+  // acb
+  // cba
 
+  for (let i = 0; i < string.length; i++) {
+    const stringArr = string.split("");
+
+    for (let v = i; v < string.length - 1; v++) {
+      const temp = stringArr[i];
+      stringArr[i] = stringArr[v];
+      stringArr[v] = stringArr[i];
+      const newAnagram = stringArr.join("");
+      combo.push(newAnagram);
+    }
+  }
+
+  return combo;
 }
+
+
 
 module.exports = anagrams;
