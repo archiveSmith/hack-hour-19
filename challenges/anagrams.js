@@ -13,7 +13,7 @@
   */
 
 function anagrams(string) {
-if(!string.length) return;
+if(!string.length) return [''];
 
 if(string.length < 2) return string;
 var permutations = [];
