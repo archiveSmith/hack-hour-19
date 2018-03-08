@@ -28,14 +28,14 @@ function deleteDups(head) {
     }
     else {
       curr = curr.next;
-      temp = curr.next
+      temp = curr.next;
     }
 
   }
 
   //loop through all values and just print them.
   let output = [];
-  let curr2 = head
+  let curr2 = head;
   while (curr2) {
     output.push(curr2.value);
     curr2 = curr2.next;
