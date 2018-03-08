@@ -18,7 +18,7 @@ function deleteDups(head) {
   while (i && i.next) {
     let j = i.next;
     while (j) {
-      if (i.val === j.val) i.next = j.next;
+      if (i.value === j.value) i.next = j.next;
       j = j.next;
     }
     i = i.next;
@@ -27,7 +27,7 @@ function deleteDups(head) {
 }
 
 function Node(value) {
-  this.val = value;
+  this.value = value;
   this.next = null;
 }
 
@@ -36,6 +36,7 @@ const linkedList = new Node(1);
 linkedList.next = new Node(1);
 linkedList.next.next = new Node(2);
 linkedList.next.next.next = new Node(2);
+
 console.log(JSON.stringify(deleteDups(linkedList), null, 2));
 */
 
