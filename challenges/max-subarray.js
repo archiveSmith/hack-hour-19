@@ -8,7 +8,15 @@
  */
 
 function maxSubarray(arr) {
+  const max = Number.NEGATIVE_INFINITY;
 
+  for (let i = 0; i < arr.length; i++) {
+    let tempMax = arr[i];
+  }
+
+  return max;
 }
+
+maxSubarray([1, 2, -6, 5, -2, 3]);
 
 module.exports = maxSubarray;
