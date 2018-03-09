@@ -22,15 +22,37 @@
  */
 
 function EventEmitter() {
-
+  this.listeners = {};
 }
 
-EventEmitter.prototype.on = function(funcName, func) {
-
+EventEmitter.prototype.on = function(event, func) {
+  if (this.listeners.hasOwnProperty(event)) this.listeners[event].push(func);
+  else {
+    this.listeners[event] = [];
+    this.listeners[event].push(func);
+  }
 };
 
-EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+EventEmitter.prototype.trigger = function(event, ...args) {
+  console.log(args);
+  if (this.listeners.hasOwnProperty(event)) {
+    this.listeners[event].forEach(func => {
+      func(args);
+    });
+  }
 };
+
+let instance = new EventEmitter();
+instance.on('Cheerio', function() {
+  console.log('Suck my D');
+});
+instance.on('Cheerio', function(x) {
+  console.log('Suck my C');
+  console.log('This is my number: ', x[0]);
+});
+instance.on('Cheerio', function() {
+  console.log('Suck my P');
+});
+instance.trigger('Cheerio',1,2,3);
 
 module.exports = EventEmitter;
