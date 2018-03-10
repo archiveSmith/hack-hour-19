@@ -11,7 +11,7 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-    if (arr.indexOf(num) !== -1) {
+    if (arr.indexOf(target) !== -1) {
         return true
     } else {
         return false
