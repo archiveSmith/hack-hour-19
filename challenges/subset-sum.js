@@ -9,7 +9,16 @@
  */
 
 function subsetSum(array, target) {
-
+    for (let i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.length; j++) {
+          if (i !== j && array[i] + array[j] === target) {
+           return true;
+        }
+      }
+      return false;
+    }
 }
+  
+
 
 module.exports = subsetSum;

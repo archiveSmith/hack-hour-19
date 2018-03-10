@@ -24,8 +24,27 @@
  *
  */
 
+<<<<<<< HEAD
+function balancedParens (input) {
+    var stack = [];
+    var open = { '{': '}', '[': ']', '(': ')' };
+    var closed = { '}': true, ']': true, ')': true };
+    
+    for (var i = 0; i < input.length; i ++) {
+      var chr = input[i];
+      if (open[chr]) {
+        stack.push(chr);
+      } else if (closed[chr]) {
+        if (open[stack.pop()] !== chr) return false;
+      }
+    }
+    
+    return stack.length === 0;
+  };
+=======
 function balancedParens(input){
 
 }
+>>>>>>> ec0683332cd9ad8f15bb9ab7d6f64d9fba61abec
 
 module.exports = balancedParens;
