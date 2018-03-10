@@ -11,9 +11,6 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-if( target > arr[arr.length-1]) {
-     return false;
-     }
 for(let i = 0; i<arr.length; i++) {
     if(arr[i] === target) {
         return true;
