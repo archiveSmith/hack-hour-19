@@ -10,9 +10,17 @@ findInOrderedSet(nums, 2);  -> false
  */
 
 
-function findInOrderedSet(arr, target) {
-
+function findInOrderedSet(arr, target, startIndex = 0, endIndex = arr.length) {
+  console.log('Looking at array from index', startIndex, 'to', endIndex);
+  if (startIndex >= endIndex - 1) {
+    console.log('in here!')
+    if (target === arr[startIndex]) return true;
+    return false;
+  }
+  const midIndex = Math.floor((startIndex + endIndex)/2);
+  if (target === arr[midIndex]) return true;
+  if (target < arr[midIndex]) return findInOrderedSet(arr, target, startIndex, midIndex);
+  else return findInOrderedSet(arr, target, midIndex + 1, endIndex);
 }
-
 
 module.exports = findInOrderedSet;
