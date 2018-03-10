@@ -8,6 +8,7 @@
  */
 
 function maxSubarray(arr) {
+
     let subArr = [];
     //get the subArray
     //then find max
@@ -16,6 +17,9 @@ function maxSubarray(arr) {
         result += subArr[i];
     }
     return result
+
+
+
 }
 
 module.exports = maxSubarray;
