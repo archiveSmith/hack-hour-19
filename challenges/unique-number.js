@@ -10,7 +10,16 @@
  *
  */
 function uniqueNumber(array) {
-
+    let container = array.reduce(function(result, number) {
+        result[number] = (result[number] || 0) + 1;
+        return result;
+       }, {});
+       
+       for (let key in container) {
+         if (container[key] === 1) {
+           return key;
+         }
+       }
 }
 
 module.exports = uniqueNumber;
