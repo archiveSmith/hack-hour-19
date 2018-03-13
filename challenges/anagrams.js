@@ -14,6 +14,7 @@
 
 function anagrams(string) {
   const combo = [];
+  
   // possible permutations
   // abc
   // bac
