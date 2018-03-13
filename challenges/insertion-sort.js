@@ -5,7 +5,7 @@
 
 
 function insertionSort(array) {
-for(i=0 i<array.length i++) {
+for(i=0; i<array.length; i++) {
     key = array[i];
     j=i-1;
     while(j>=0 && key<array[j]) {
@@ -15,6 +15,7 @@ for(i=0 i<array.length i++) {
         array[j+1] = key;
     
 }
+return array;
 }
 
 module.exports = insertionSort;
