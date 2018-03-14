@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+    if (!array) return [0];
     const products = [];
     const first = array.slice(1);
     products.push(first.reduce((acc, el) => acc * el));
