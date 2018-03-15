@@ -11,15 +11,11 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-<<<<<<< HEAD
     if (arr.indexOf(target) !== -1) {
         return true
     } else {
         return false
     }
-=======
-
->>>>>>> e4eefa44cf0d425f82f2efe17c13f9f8ff9fb65e
 }
 
 
