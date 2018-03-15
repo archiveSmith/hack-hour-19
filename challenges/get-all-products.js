@@ -11,6 +11,7 @@
 
 function getAllProducts(array) {
   if (!Array.isArray(array)) return;
+  if (!array.length) return 0;
   let numZeros = 0;
   let product = array.reduce((acc, curr) => {
     if (curr === 0) {
@@ -22,6 +23,7 @@ function getAllProducts(array) {
   return array.map((num, i) => {
     if (numZeros > 1) return 0;
     if (num === 0) return product;
+    if (numZeros === 1) return 0;
     return product / num;
   })
 }
