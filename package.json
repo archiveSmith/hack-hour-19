@@ -27,5 +27,8 @@
     "type": "git",
     "url": "git+https://github.com/CodesmithLLC/hack-hour-19.git"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1"
+  }
 }
