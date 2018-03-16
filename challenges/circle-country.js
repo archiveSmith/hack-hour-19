@@ -23,7 +23,25 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  // for each circle, determine if start and end is inside of it  
+  const startContainingDistricts = getContainingDistricts(x, y, r, start_x, start_y);
+  const endContainingDistricts = getContainingDistricts(x, y, r, end_x, end_y);
+  return startContainingDistricts.filter(x => endContainingDistricts.indexOf(x) === -1).length;
 }
+
+function getContainingDistricts(x, y, r, point_x, point_y) {
+  const containingDistricts = [];
+  for(let i = 0; i < r.length; i++) {
+    // If point is in ith circle, push into containing districts array
+    if (distance(x[i], y[i], point_x, point_y) < r[i])
+      containingDistricts.push(i);
+  }
+  return containingDistricts;
+}
+
+function distance(x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
 
 module.exports = circleCountry;
