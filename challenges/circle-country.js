@@ -28,19 +28,13 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
   // If they are each inside of a district, he has to cross two borders (more if nested)
 
   // Find out how many districts start and end are inside of:
-  let startCount = 0;
-  let endCount = 0;
+  let count = 0;
   for (let i=0; i<x.length; i++) {
-    if ((start_x-x[i])**2 + (start_y-y[i])**2 < r[i]**2) {
-      startCount++;
-    }
-    if ((end_x-x[i])**2 + (end_y-y[i])**2 < r[i]**2) {
-      endCount++;
+    if ((((start_x-x[i])**2 + (start_y-y[i])**2 < r[i]**2) && !((end_x-x[i])**2 + (end_y-y[i])**2 < r[i]**2)) || (!((start_x-x[i])**2 + (start_y-y[i])**2 < r[i]**2) && ((end_x-x[i])**2 + (end_y-y[i])**2 < r[i]**2))) {
+      count++;
     }
   }
-
-  // Add them together
-  return startCount + endCount;
+  return count;
 }
 
 module.exports = circleCountry;
