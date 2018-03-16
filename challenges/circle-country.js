@@ -23,7 +23,48 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  let crossed = 0;
+  for (let i = 0; i < x.length; i ++) {
+    let cross = false;
+    cross = cross ^ (isInCircle(x[i], y[i], r[i], start_x, start_y));
+    cross = cross ^ (isInCircle(x[i], y[i], r[i], end_x, end_y));
+    crossed += cross;
+  }
+  return crossed;
+}
+
+function isInCircle(center_x, center_y, r, x, y) {
+  const x_squared = Math.pow((center_x - x), 2);
+  const y_squared = Math.pow((center_y - y), 2);
+  return (x_squared + y_squared <= Math.pow(r, 2));
+}
+
+function tests() {
+  console.log(isInCircle(5, 5, 5, 5, 10));
+  console.log(isInCircle(5, 5, 5, 0, 5));
+  console.log(isInCircle(5, 5, 5, 5, 0));
+  console.log(isInCircle(5, 5, 5, 10, 5));
+
+  console.log(isInCircle(5, 5, 5, 2, 1));
+  console.log(isInCircle(5, 5, 5, 1, 2));
+  console.log(isInCircle(5, 5, 5, 8, 9));
+  console.log(isInCircle(5, 5, 5, 8, 1));
+
+  console.log(isInCircle(5, 4, 3, 5, 1));
+  console.log(isInCircle(5, 4, 3, 5, 0));
+
+  let x = [100, 100, 100, 4, 3, 50];
+  let y = [100, 100, 100, 0, 2, 50];
+  let r = [1, 20, 1000, 5, 10, 50];
+
+
+
+  console.log(circleCountry(x, y, r, 0, 0, 100, 100));
+  console.log(circleCountry(x, y, r, 100, 100, 0, 0));
+
 
 }
+
+//tests();
 
 module.exports = circleCountry;
