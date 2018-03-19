@@ -9,8 +9,8 @@ function LinkedList() {
 
 function Node(val) {
   this.val = val;
-  this.next = next;
-  this.prev = prev;
+  this.next = null;
+  this.prev = null;
 }
 
 let ll = new LinkedList();
