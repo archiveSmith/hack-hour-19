@@ -13,7 +13,21 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+    let yesterdaysPrice;
+    let todaysPrice;
+    let x;
+    let y;
+    stock_prices_yesterday.x = yesterdaysPrice;
+    stock_prices_yesterday.y = todaysPrice;
+    stock_prices_yesterday = stock_prices_yesterday.slice(0, 2)
+    console.log(stock_prices_yesterday[0].x)
+    console.log(stock_prices_yesterday)
+    if (stock_prices_yesterday[0].x < stock_prices_yesterday[1].y) {
+        return stock_prices_yesterday[1].y - stock_prices_yesterday[0].x
+    } else {
+        return 0;
+    }
 }
+console.log(bestProfit([{ 'x': 500 }, { 'y': 700 }]));
 
 module.exports = bestProfit;

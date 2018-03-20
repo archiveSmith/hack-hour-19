@@ -20,9 +20,26 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
-
-function kthToLastNode(k, head) {
-
+function LinkList() {
+  this.head = null;
+  this.tail = null;
 }
 
-module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+function kthToLastNode(k, head) {
+  if (a = null) {
+    return a;
+  }
+  let current = a
+  let counter = 1
+  while (current.next) {
+    current = current.next;
+    counter++
+  }
+
+  // counter - k = node;
+
+
+}
+console.log(kthToLastNode(3, a))
+
+module.exports = { Node: Node, kthToLastNode: kthToLastNode };
