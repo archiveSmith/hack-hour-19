@@ -10,8 +10,19 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
+// i string
+// true or false depending on if every word in the string closed by its reverse counterpart
+// psuedo code - split the string into words
 
+
+function matchWord (str) {
+    let workingString = str.replace(/\W/g, '');
+    console.log(workingString);
+    let copy = workingString;
+
+    let copy2 = workingString.split(' ').reverse().join();
+    
 }
+matchWord("hell..o friend");
 
 module.exports = matchWord;

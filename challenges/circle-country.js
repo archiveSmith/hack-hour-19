@@ -24,6 +24,30 @@
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 
+  // Loop over circles and find if start_x,y and end_x,y are inside or outside each circle
+  // The difference in inside/ouside totals should be the fewest borders crossed
+  const startStats = [];
+  const endStats = [];
+
+  // Use pythagorean theroem for each circle find inside/outside status for each point
+  xArr.forEach((x, i) => {
+    const startXDiff = Math.pow((x - start_x), 2);
+    const startYDiff = Math.pow((yArr[i] - start_y), 2);
+    const startDist = Math.sqrt(startXDiff + startYDiff);
+    if (startDist < rArr[i]) startStats.push(true);
+    else startStats.push(false);
+
+    const endXDiff = Math.pow((x - end_x), 2);
+    const endYDiff = Math.pow((yArr[i] - end_y), 2);
+    const endDist = Math.sqrt(endXDiff + endYDiff);
+    if (endDist < rArr[i]) endStats.push(true);
+    else endStats.push(false);
+  });
+
+  return startStats.reduce((acc, val, i) => {
+    if (val !== endStats[i]) acc++;
+    return acc;
+  }, 0)
 }
 
 module.exports = circleCountry;
