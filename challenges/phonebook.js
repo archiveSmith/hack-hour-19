@@ -26,17 +26,50 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-
+  jazbook.forEach(record => {
+    if (record[0] === name) return record[1];
+  });
+  return false;
 }
 
 // return an object literal representing the jazbook
-function makePhoneBookObject(jazbook){
-
+function makePhoneBookObject(jazbook) {
+  let result = {};
+  jazbook.forEach(record => {
+    console.log(record[0]);
+    result.record[0] = record[1];
+  });
+  return result;
 }
+
+makePhoneBookObject.prototype.addNew = function(jazbook) {
+  console.log("adding");
+};
+makePhoneBookObject.prototype.lookUp = function(jazbook) {
+  console.log("looking up");
+};
+makePhoneBookObject.prototype.remove = function(jazbook) {
+  console.log("removing");
+};
+
+const jaxbook = [
+  ["alex", "301-844-3421"],
+  ["jae", "301-844-1211"],
+  ["david", "301-844-0978"],
+  ["travis", "301-844-8505"],
+  ["jasmine", "1800-974-4539"]
+];
+
+let newBook = makePhoneBookObject.makePhoneBookObject(jaxbook);
+
+console.log(newBook);
+console.log(newBook.addNew(jaxbook));
+
+// console.log(makePhoneBookObject(jaxbook));
 
 const objectToExport = {
   findName,
-  makePhoneBookObject,
+  makePhoneBookObject
 };
 
 module.exports = objectToExport;
