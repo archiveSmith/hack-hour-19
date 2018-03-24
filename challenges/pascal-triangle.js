@@ -43,7 +43,13 @@ function pascalTriangle(numRows) {
   }
   newRow.push(1);
   newRow.unshift(1);
-  return [previousRows, newRow];
+  previousRows.push(newRow);
+  return previousRows;
 }
+console.log(pascalTriangle(1));
+console.log(pascalTriangle(2));
+console.log(JSON.stringify(pascalTriangle(3)));
+console.log(JSON.stringify(pascalTriangle(4)));
+console.log(JSON.stringify(pascalTriangle(5)));
 
 module.exports = pascalTriangle;
