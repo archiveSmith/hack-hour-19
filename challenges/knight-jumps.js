@@ -11,7 +11,35 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  if (typeof str !== 'string') return;
+  const coords = [];
+  coords.push(parseInt(str[1]));
+  coords.push(parseInt(str[3]));
+  coords.push(coords[1]);
+  coords.push(coords[0]);
+  let positions = 0;
+  const twos = [2, -2];
+  const ones = [1, -1];
 
+  for (let i = 0; i < 2; i ++) {
+    const i1 = coords[i * 2];
+    const i2 = coords[1 + i * 2];
+    for (let j = 0; j < 2; j ++) {
+      for (let k = 0; k < 2; k ++) {
+        let a = i1 + twos[j];
+        let b = i2 + ones[k];
+        //console.log(a, b);
+        if (a > -1 && a < 8 && b > -1 && b < 8) {positions ++}
+      }
+    }
+  }
+  return positions;
 }
+
+function tests() {
+  console.log(knightjumps("(1 5)"));
+}
+
+//tests();
 
 module.exports = knightjumps;
