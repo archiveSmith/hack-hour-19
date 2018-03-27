@@ -15,7 +15,14 @@
  */
 
 function countStairs(n) {
-
+  if (n < 4) {
+    initial = [1, 2, 4];
+    return initial[n - 1];
+  } else {
+    return countStairs(n - 1) + countStairs(n - 2) + countStairs(n - 3);
+  }
 }
+
+console.log(countStairs(8));
 
 module.exports = countStairs;

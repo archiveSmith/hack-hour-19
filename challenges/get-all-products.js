@@ -10,7 +10,27 @@
  */
 
 function getAllProducts(array) {
-
+  if (array.length === 0) return [0];
+  //initialize bottom array, top array, and product array
+  const productArray = [];
+  const bottomArray = [];
+  const topArray = [];
+  //iterate to get all values of the bottom array
+  let p = 1;
+  for (let i = 0; i < array.length; i++) {
+    bottomArray[i] = p;
+    p *= array[i];
+  }
+  //iterate to get all values of top array
+  p = 1;
+  for (let f = array.length - 1; f >= 0; f--) {
+    topArray[f] = p;
+    p *= array[f];
+  }
+  bottomArray.forEach((e, i) => {
+    productArray.push(bottomArray[i] * topArray[i]);
+  });
+  return productArray;
 }
 
 module.exports = getAllProducts;
