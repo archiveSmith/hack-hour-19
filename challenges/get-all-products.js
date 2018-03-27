@@ -10,7 +10,13 @@
  */
 
 function getAllProducts(array) {
-
+  let results = [];
+  for (let i = 0; i < array.length; i++) {
+    results.push(array.reduce((prod, num, idx) => {
+      return prod = (i === idx) ? prod : prod * num;
+    }, 1));
+  }
+  return results;
 }
 
 module.exports = getAllProducts;
