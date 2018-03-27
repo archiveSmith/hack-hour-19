@@ -11,7 +11,53 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  let [x, y] = str.match(/\d+/g);
+  [x, y] = [+x, +y];
 
+  if (x > 4) x = -(x - 9);
+  if (y > 4) y = -(y - 9);
+
+  [x, y] = [+x, +y].sort();
+
+  if (x > 2) return 8;
+  if (x === 2) return y > 2 ? 6 : 4;
+  if (y === 2) return 3;
+  if (y === 1) return 2;
+  return 4;
+}
+
+function knightjumps(str) {
+  const startX = parseInt(str[1]);
+  const startY = parseInt(str[3]);
+
+  if (isNaN(startX) || isNaN(startY)) return undefined;
+
+  let knightMoves = 0;
+
+  function checkY() {
+    if (startY + 1 <= 8) knightMoves++;
+    if (startY - 1 > 0) knightMoves++;
+  }
+
+  function checkX() {
+    if (startX + 1 <= 8) knightMoves++;
+    if (startX - 1 > 0) knightMoves++;
+  }
+
+  if (startX + 2 <= 8) {
+    checkY();
+  }
+  if (startX - 2 > 0) {
+    checkY();
+  }
+  if (startY + 2 <= 8) {
+    checkX();
+  }
+  if (startY - 2 > 0) {
+    checkX();
+  }
+
+  return knightMoves;
 }
 
 module.exports = knightjumps;

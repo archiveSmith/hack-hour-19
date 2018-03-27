@@ -9,8 +9,23 @@
  * Complete the challenge in O(1) space
  *
  */
+// Using an object to store seen numbers O(n) space/time
 function uniqueNumber(array) {
-
+ const obj = array.reduce((acc, num) => {
+  if (!acc[num]) acc[num] = true;
+  else delete acc[num];
+  return acc;
+ }, {});
+ return Object.keys(obj)[0];
 }
+​
+// // Bitwise XOR O(n) time - O(1) space
+// function uniqueNumber(array) {
+//  var result = 0;
+//  for (var i = 0; i < array.length; i++) {
+//   result = result ^ array[i];
+//  }
+//  return result;
+// }
 
 module.exports = uniqueNumber;
