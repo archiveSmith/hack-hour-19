@@ -11,7 +11,58 @@
 
 
 function modemean(array) {
+	if(array.length===1){
+		return true;
+	}
+	let allSame = true;
+	for(let i=1; i<array.length; i++){
+		let firstNum = array[0]; 
+		if(firstNum!==array[i]){
+			allSame = false; 
+		}
+	}
+	if(allSame === true){
+		return true; 
+	}
+	function mode(array){
+		let mode = 0;
+		let modeCount = 0; 
+		for(let el of array){
+			let tempCount = 0;
+			for(let ch of array){
+				if(el===ch){
+					tempCount++; 
+				}
+			}
+			if(tempCount>modeCount){
+				mode = el; 
+			}
+			if(tempCount===modeCount){
+				if(el > mode){
+					mode = el;
+				}
+			}
+		}
+		return mode; 
+	}
 
+	function mean(array){
+		let mean = 0;
+		for(let el of array){
+			mean+=el; 
+		}
+		mean = Math.floor(mean/array.length);
+		return mean;
+	}
+	
+
+	let Mode = mode(array);
+	let Mean = mean(array);
+	
+	if(Mean === Mode){
+		return true;
+	}
+	return false;
 }
 
 module.exports = modemean;

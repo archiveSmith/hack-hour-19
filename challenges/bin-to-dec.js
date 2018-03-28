@@ -14,7 +14,16 @@
  */
 
 function binToDec(binary) {
-
+  let count = 0;
+  let sum = 0;
+  for(let i=binary.length-1; i>0; i--){
+    if(binary.charAt(i)==1){
+      sum+=Math.pow(2,count);
+    }
+    count++;
+  }
+  return sum; 
+  //
 }
 
 module.exports = binToDec;
