@@ -16,6 +16,29 @@
 
 function countStairs(n) {
 
+  // Use a counter
+  let total = 0;
+
+  // Once you reach the top of the staircase, you are done.
+  if (n === 0) return total;
+  
+  // If you have one stair to climb, there is one way to do it.
+  if (n === 1) {
+    return total + 1;
+  }
+
+  // If you have two stairs to climb, there are two ways to do it
+  if (n === 2) {
+    return total + 2;
+  }
+
+  // If you have more than two stairs to climb, you can either start with 1 and add countStairs(n-1) more possibilities or start with 2 and add countStairs(n-2) more possibilities
+  if (n > 2) {
+    return total + countStairs(n-1) + countStairs(n-2);
+  }
+
+  return total;
+
 }
 
 module.exports = countStairs;
