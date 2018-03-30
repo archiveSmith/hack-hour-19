@@ -14,7 +14,35 @@
  */
 
 function binToDec(binary) {
-
+    if (binary = '') return undefined;
+    const reverseBin = binary.split('').reverse();
+    // console.log(reverseBin);
+    let sum = 0;
+    let base = 1;
+    for  (let i = 0; i < reverseBin.length; i++){
+        sum += reverseBin[i] * base;
+        base *= 2;
+    }
+    return sum;
 }
+
+// function decToBin(decimal) {
+//     if (decimal === 0) return 0;
+//     if (decimal === 1) return 1;
+
+//     let nearestTwo = 1;
+//     while (nearestTwo * 2 <= decimal){
+//         nearestTwo *= 2;
+//     }
+//     let binaryIndex = Math.log2(nearestTwo);
+//     let binArray = new Array(binaryIndex+1).fill(0);
+//     binArray[0] = 1;
+//     let binString = binArray.join('');
+//     let binNum = Number(binString);
+
+//     return binNum + decToBin(decimal - nearestTwo);
+// }
+
+
 
 module.exports = binToDec;

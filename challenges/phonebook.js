@@ -26,7 +26,30 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
+  // sort it first by name? how long does this take? oh well.
+  jazbook.sort((a,b) => {
+    if (a[0] < b[0]) return -1;
+    else return 1;
+  });
 
+  // then do a binary search.
+  function search(jazbook, name){
+    if (jazbook.length === 0) return 'not found'
+    let mid = Math.floor(jazbook.length/2);
+    console.log('jazbookmid', jazbook[mid][1]);
+    
+    if (name === jazbook[mid]){
+      return jazbook[mid][1];
+    }
+    else if (name > jazbook[mid]) {
+      jazbook = jazbook.slice(mid+1);
+    } else {
+      jazbook = jazbook.slice(0, mid);
+    }
+    return search(jazbook, name);
+  }
+
+  return search(jazbook, name);
 }
 
 // return an object literal representing the jazbook

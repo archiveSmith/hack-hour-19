@@ -3,7 +3,14 @@
  */
 
 function twoSum(arr, n) {
-
+  const arrlen = arr.length;
+  if (arrlen < 2) return false;
+  for (let i = 0; i < arrlen; i++){
+    for (let j = i + 1; j < arrlen; j++){
+      if (i + j === n) return true;
+    }
+  }
+  return false;
 }
 
 module.exports = twoSum;
