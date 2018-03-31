@@ -10,7 +10,17 @@
  *
  */
 function uniqueNumber(array) {
-
+  const occurrences = array.reduce((tracker, el) => {
+    if (tracker[el]) tracker[el]++;
+    else tracker[el] = 1;
+    return tracker;
+  }, {});
+  const keys = Object.keys(occurrences);
+  let single;
+  keys.forEach(key => {
+    if(occurrences[key] === 1) single = key;
+  });
+  return single;
 }
-
+console.log(uniqueNumber([1,2,3,2,3])); // -> 2)
 module.exports = uniqueNumber;

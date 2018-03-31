@@ -17,7 +17,7 @@
  */
 
 function rotateGrid(grid, n) {
-
+  return grid.map((row, i) => row.map((elem, j) => grid[n - 1 - j][i]));
 }
 
 module.exports = rotateGrid;
