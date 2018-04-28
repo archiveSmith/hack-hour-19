@@ -1,4 +1,6 @@
-// Write a function that returns an array containing the numbers 1 to NUM. Put "fizz" in place of numbers divisble by 3, "buzz" in place of numbers divisble by 5, and "fizzbuzz" in place of numbers divisble by both 3 and 5
+// Write a function that returns an array containing the numbers 1 to NUM.
+// Put "fizz" in place of numbers divisble by 3,
+// "buzz" in place of numbers divisble by 5, and "fizzbuzz" in place of numbers divisble by both 3 and 5
 // fizzbuzz(16);  -> [ 1,
 //                     2,
 //                     'fizz',
@@ -16,8 +18,24 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {  
+function fizzbuzz(num) {
+  const output = [];
+  for (let i = 1; i <= num; i += 1) {
+    if (i % 15 === 0) {
+      output.push('fizzbuzz')
+    } else if (i % 5 === 0) {
+      output.push('buzz');
+    } else if (i % 3 === 0) {
+      output.push('fizz');
+    } else {
+      output.push(i);
+    }
+  }
 
+  return output;
 }
+
+// console.log(fizzbuzz(100));
+// console.log(fizzbuzz(120));
 
 module.exports = fizzbuzz;

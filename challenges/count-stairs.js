@@ -15,7 +15,23 @@
  */
 
 function countStairs(n) {
-
+  if (typeof n !== 'number') return;
+  let ways = [];
+  ways.push(1);
+  ways.push(1);
+  for (let i = 2; i <= n; i ++) {
+    ways.push(ways[i-1] + ways[i-2]);
+  }
+  return ways[n];
 }
+
+function tests() {
+  console.log(countStairs(4));
+  console.log(countStairs(5));
+  console.log(countStairs(6));
+  console.log(countStairs(20));
+}
+
+//tests()
 
 module.exports = countStairs;

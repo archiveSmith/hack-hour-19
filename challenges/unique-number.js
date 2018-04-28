@@ -10,7 +10,14 @@
  *
  */
 function uniqueNumber(array) {
-
+  if (!Array.isArray(array)) return;
+  return (array.reduce((acc, curr) => { return acc ^ curr }, 0) ^ 0); // XOR is dope
 }
+
+function tests() {
+  console.log(uniqueNumber([1,2,2,1,3, 7, 3]));
+}
+
+//tests()
 
 module.exports = uniqueNumber;
