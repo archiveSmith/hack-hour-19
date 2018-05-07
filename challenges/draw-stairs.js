@@ -13,9 +13,13 @@
 
 */
 
-function drawStairs(n) {
-
+function drawStairs (n)  {
+  let myStairs = '';
+  for( var i = 1; i<= n; i++) {
+    myStairs +=  ' '.repeat(n-i) + '*'.repeat(i) + '\n'; 
+  }
+  console.log(myStairs);
 }
-
+drawStairs(6);
 
 module.exports = drawStairs;
