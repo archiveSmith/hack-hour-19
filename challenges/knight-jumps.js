@@ -11,7 +11,27 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
-}
+    const arr = str.slice(1, -1).split(' ');
+    let x = Number(arr[0]);
+    let y = Number(arr[1]);
+    let moves = 0;
+    
+    // test all adjacent movement options
+    if (validMove(x - 2, y)) moves++;
+    if (validMove(x + 2, y)) moves++;
+    if (validMove(x, y + 2)) moves++;
+    if (validMove(x, y - 2)) moves++;
+    if (validMove(x - 2, y - 2)) moves++;
+    if (validMove(x + 2, y + 2)) moves++;
+    if (validMove(x - 2, y + 2)) moves++;
+    if (validMove(x + 2, y - 2)) moves++;
+    
+    return moves;
+  }
+  
+  function validMove (x, y) {
+    if (x < 1 || x > 8 || y < 1 || y > 8) return false;
+    return true;
+  }
 
 module.exports = knightjumps;

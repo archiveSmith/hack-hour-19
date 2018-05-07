@@ -16,8 +16,21 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
+// i is sample grid and the number of arrays/dimension
+// 
 
-}
+function rotateGrid(grid, n) {
+    let outerArr = [];
+    let innerArr = [];
+    
+    for (let m = 0; m<n; m++) {
+        for(let i = n; i>0; i--) {
+            innerArr.push(grid[i-1][m]);
+        }
+        outerArr.push(innerArr);
+        innerArr = [];
+    }
+    return outerArr;
+    }
 
 module.exports = rotateGrid;
