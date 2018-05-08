@@ -24,48 +24,27 @@
  *
  */
 
- function balancedParens(input){
-   let reg = /[a-zA-Z0-9\:\=\.\;\s]/g;
-   input = input.split('').filter(x => !(x.match(reg)))
-   input = input.join('');
-   if (input === '()' || input === '[]' || input === '{}') {
-     return true;
-   }
-   if (input.length === 2) {
-     if (input !== '()' || input !== '[]' || input !== '{}') {
-       return false;
+function balancedParens(input){
+   let storage = [];
+   if (input.length === 1 || input.length === 0) return false;
+   for (let i = 0; i < input.length; i++) {
+     if (input[i] === '(' || input[i] === '{' || input[i] === '[') {
+       storage.push(input[i]);
+     } else if (input[i] === ')') {
+       if (storage[storage.length-1] === '(') {
+         storage.pop();
+       }
+     } else if (input[i] === '}') {
+       if (storage[storage.length-1] === '{') {
+         storage.pop();
+       }
+     } else if (input[i] === ']') {
+       if (storage[storage.length-1] === '[') {
+         storage.pop();
+       }
      }
    }
-   if (input.length % 2 === 1) {
-     return false;
-   }
-   let first = input[0];
-   let end = input[input.length - 1];
-   if (first === '(' && input[input.indexOf(first) + 1] === ')') {
-     return balancedParens(input.slice(2));
-   }
-   if (first === '[' && input[input.indexOf(first) + 1] === ']') {
-     return balancedParens(input.slice(2));
-   }
-   if (first === '{' && input[input.indexOf(first) + 1] === '}') {
-     return balancedParens(input.slice(2));
-   }
-   if (first === '(' && first !== '{' && first !== '[') {
-     if (end === ')') {
-       return balancedParens(input.slice(1,-1));
-     }
-   }
-   if (first === '[' && first !== '(' && first !== '{') {
-     if (end === ']') {
-       return balancedParens(input.slice(1,-1));
-     }
-   }
-   if (first === '{' && first !== '[' && first !== '(') {
-     if (end === '}') {
-       return balancedParens(input.slice(1,-1));
-     }
-   }
-   return false;
+   return storage.length === 0;
  }
 
 
