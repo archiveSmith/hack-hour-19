@@ -18,6 +18,32 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  let num1 = '';
+  let num2 = '';
+  let current = l1.head;
+  while (current) {
+    num1 += current.value;
+    current = current.next;
+  }
+  num1 = parseInt(num1, 10);
+  current = l2.head;
+  while (current) {
+    num2 += current.value;
+    current = current.next
+  }
+  num2 = parseInt(num1, 10);
+  let sum = num1 + num2;
+  let sum = String(sum).split('').reverse().map(int => parseInt(int, 10));
+  let LL = new LinkedList();
+  let val = sum.shift();
+  LL.head = new Node(val);
+  let pointer = LL.head;
+  while (sum.length !== 0) {
+    val = sum.shift();
+    let nextNode = new Node(val);
+    pointer = pointer.next;
+    pointer = nextNode;
+  }
 
 }
 

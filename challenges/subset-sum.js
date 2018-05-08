@@ -24,4 +24,5 @@
   return isSubsetSum(array, array.length, target);
 }
 
+
 module.exports = subsetSum;
