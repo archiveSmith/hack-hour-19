@@ -12,6 +12,30 @@
 
 function matchWord(str) {
 
+    let newStr = str.toUpperCase().split('')
+    let letters = /^[A-Za-z]+$/;
+    let arr = [];
+    let arrRev = arr.reverse();
+    if (newStr === []) {
+        return true
+    } else {
+        for (let i = 0; i < newStr.length; i++) {
+            if (newStr[i].match(letters)) {
+                arr.push(newStr[i]);
+            }
+        }
+    }
+    if (arr === arrRev) {
+        return true;
+    } else {
+        return false;
+    }
+    console.log(arrRev);
 }
+console.log(matchWord('for__if__rof__fi'));
+
+
+
+
 
 module.exports = matchWord;

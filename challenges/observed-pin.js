@@ -43,6 +43,11 @@ expectations = {
 
 
 function getPINs(observed) {
+  //all variation for 1357
+  let one = [1, 2, 4];
+  let three = [2, 3, 6];
+  let five = [2, 4, 5, 6, 8];
+  let seven = [4, 7, 8];
 
 }
 

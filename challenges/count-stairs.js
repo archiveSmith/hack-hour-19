@@ -15,7 +15,14 @@
  */
 
 function countStairs(n) {
+    let one = 1;
+    let two = 2;
+    if (result.indexOf(temp) !== -1) {
+        return;
+    } else {
 
+        return
+    }
 }
 
 module.exports = countStairs;

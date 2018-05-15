@@ -13,7 +13,20 @@
   */
 
 function anagrams(string) {
+  let num = string.length
+  let result = [];
+  function factoral(num) {
+    if (num === 0) {
+      return 1
+    } else {
 
+      return num * factoral(num - 1)
+    }
+  }
+  if (result.indexOf())
+    for (let i = 0; i < string.length; i++) {
+
+    }
 }
 
 module.exports = anagrams;

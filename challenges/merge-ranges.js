@@ -11,7 +11,9 @@
 
 
 function mergeRanges(array) {
+    if (array[0][1]) {
 
+    }
 }
 
 module.exports = mergeRanges;

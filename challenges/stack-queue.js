@@ -5,6 +5,11 @@
 
 function Stack() {
 
+    this.storage = {};
+    this.index = 0;
+
+
+
 }
 
 
@@ -15,6 +20,15 @@ function Stack() {
 
 function Queue() {
 
+    let firstBox = new Stack();
+    let lastBox = new Stack();
+
+    this.enqueue = function () {
+        firstBox.push(lastBox);
+    }
 }
 
-module.exports = {Stack: Stack, Queue: Queue};
+module.exports = { Stack: Stack, Queue: Queue };
+
+
+

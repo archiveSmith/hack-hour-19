@@ -9,6 +9,17 @@
 
 function maxSubarray(arr) {
 
+    let subArr = [];
+    //get the subArray
+    //then find max
+    let result;
+    for (let i = 0; i < subArr.length; i++) {
+        result += subArr[i];
+    }
+    return result
+
+
+
 }
 
 module.exports = maxSubarray;
