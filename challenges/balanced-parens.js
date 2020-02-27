@@ -24,8 +24,42 @@
  *
  */
 
-function balancedParens(input){
+//between parenthes
 
+
+
+function balancedParens(input){
+  let newInput = input.split('');
+  let stack = [];
+  let expected;
+
+  let openingBrackets = ['[', '{', '('];
+  let closingBrackets = [']', '}', ')'];
+
+  for(let i = 0; i < newInput.length; i++) {
+    let ch = newInput[i];
+    
+   if(openingBrackets.indexOf(ch) > -1) {
+     stack.push(ch);
+   } else if(closingBrackets.indexOf(ch) > -1) {
+     stack.push(ch);
+
+     expected = openingBrackets[closingBrackets.indexOf(ch)];
+     if (stack.length === 0 || (stack.pop() !== expected)) {
+       return false;
+     }
+  } else {
+    continue;
+  }
+    
 }
 
+  return stack.length === 0;
+}
+
+
 module.exports = balancedParens;
+
+console.log(balancedParens('[](){}')); // true
+console.log(balancedParens('[({})]'));   // true
+console.log(balancedParens('[(]{)}')); // false

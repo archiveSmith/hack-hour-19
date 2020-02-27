@@ -14,7 +14,9 @@
  */
 
 function binToDec(binary) {
-
+  return parseInt(binary, 2);
 }
+
+console.log(binToDec('0101'));
 
 module.exports = binToDec;
