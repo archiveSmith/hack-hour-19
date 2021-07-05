@@ -11,6 +11,23 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+
+  let l1NodesUsed = 0;
+  let l2NodesUsed = 0;
+  if(l1.length === 0) return l2;
+  if(l2.length === 0) return l1;
+  let l1.head = new Node();
+  l1.head.next = l1.head;
 };
+
+console.log(zip(,))
+
+public class Node {
+  Node next;
+  int data;
+  public Node(int data) {
+    this.data = data;
+  }
+}
 
 module.exports = {Node: Node, zip: zip};
